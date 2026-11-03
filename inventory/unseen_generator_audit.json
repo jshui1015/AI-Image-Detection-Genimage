@@ -1,0 +1,31 @@
+{
+  "scope": "official val/ai only; no files modified",
+  "existing_audit_rows": 1003440,
+  "new_images": 12000,
+  "by_generator": {
+    "glide": {
+      "files": 6000,
+      "classes": 1000,
+      "per_class_histogram": {
+        "6": 1000
+      },
+      "errors": 0
+    },
+    "vqdm": {
+      "files": 6000,
+      "classes": 1000,
+      "per_class_histogram": {
+        "6": 1000
+      },
+      "errors": 0
+    }
+  },
+  "exact_or_thumbnail_duplicates_vs_existing": [],
+  "glide_vqdm_pixel_duplicates": [],
+  "same_class_near_duplicate_pairs_vs_existing": [],
+  "near_pair_candidates_dhash_le3": 22,
+  "near_policy": "same ImageNet class, 64-bit dHash Hamming distance <=3, then 32x32 RGB RMSE <=3.0; does not exhaustively match crops/rotations.",
+  "errors": [],
+  "seconds": 9.64,
+  "hash_policy": "SHA-256 file bytes, EXIF-corrected RGB pixels, and 32x32 RGB thumbnail."
+}

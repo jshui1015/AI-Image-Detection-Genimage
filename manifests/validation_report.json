@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "total_selected": 62000,
+  "split_sizes": {
+    "train": 40000,
+    "val": 8000,
+    "test_seen": 10000,
+    "reserved_real_glide": 2000,
+    "reserved_real_vqdm": 2000
+  },
+  "all_selected_paths_exist": true,
+  "all_records_match_audited_candidates": true,
+  "pairwise_image_id_path_source_group_overlap": 0,
+  "known_official_boundary_crossing_selected_groups": 0,
+  "per_class_quotas_and_generator_balance_passed": true
+}

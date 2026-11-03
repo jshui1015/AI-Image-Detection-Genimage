@@ -1,0 +1,13 @@
+__pycache__/
+outputs/
+BigGAN/
+ADM/
+glide/
+VQDM/
+stable_diffusion_v_1_4/
+stable_diffusion_v_1_5/
+Midjourney/
+wukong/
+*.pt
+*.pth
+*.tar

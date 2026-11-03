@@ -1,0 +1,10 @@
+{
+  "method": "Pretrained ImageNet ResNet-50 top-1/top-5 classification on 100 deterministic sampled classes per generator, compared with one reserved same-class real image per class.",
+  "sampled_classes": 100,
+  "class_index_field": "Filename component 4 (zero-based after generator, 1000, 200), range 000-999; each value has six images in official val/ai.",
+  "results": {
+    "glide": {"fake_top1": 0.47, "fake_top5": 0.69, "matched_real_top1": 0.82, "matched_real_top5": 0.96},
+    "vqdm": {"fake_top1": 0.56, "fake_top5": 0.75, "matched_real_top1": 0.78, "matched_real_top5": 0.98}
+  },
+  "interpretation": "Supports the filename class mapping as a sample-level check; generated-image semantic fidelity is lower than real-image classification. It is not a per-image ground-truth audit."
+}

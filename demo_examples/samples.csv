@@ -1,0 +1,10 @@
+sample_id,image_file,split,true_label,generator,reference_resnet_score,source_path
+sample_01,sample_01.jpeg,test_seen,真图,real,5.9673518990166485e-05,BigGAN/extracted/imagenet_ai_0419_biggan/val/nature/ILSVRC2012_val_00015763.JPEG
+sample_02,sample_02.png,test_seen,AI生成图,ADM,0.9998286962509155,ADM/extracted/imagenet_ai_0508_adm/val/ai/637_adm_34.PNG
+sample_03,sample_03.png,test_seen,AI生成图,BigGAN,0.9996874332427979,BigGAN/extracted/imagenet_ai_0419_biggan/val/ai/441_biggan_00127.png
+sample_04,sample_04.png,test_seen,AI生成图,stable_diffusion_v_1_4,0.9999593496322632,stable_diffusion_v_1_4/extracted/imagenet_ai_0419_sdv4/val/ai/230_sdv4_00143.png
+sample_05,sample_05.png,test_glide_unseen,AI生成图,GLIDE,0.9999994039535522,glide/extracted/imagenet_glide/val/ai/GLIDE_1000_200_03_350_glide_00020.png
+sample_06,sample_06.png,test_vqdm_unseen,AI生成图,VQDM,0.9999935626983643,VQDM/extracted/imagenet_ai_0419_vqdm/val/ai/VQDM_1000_200_00_049_vqdm_00074.png
+sample_07,sample_07.png,test_glide_unseen,AI生成图,GLIDE（接近漏检）,0.2782568037509918,glide/extracted/imagenet_glide/val/ai/GLIDE_1000_200_00_060_glide_00020.png
+sample_08,sample_08.png,test_vqdm_unseen,AI生成图,VQDM（接近漏检）,0.37239107489585876,VQDM/extracted/imagenet_ai_0419_vqdm/val/ai/VQDM_1000_200_00_028_vqdm_00020.png
+sample_09,sample_09.png,test_vqdm_unseen,AI生成图,VQDM（高置信漏检）,0.004038591403514147,VQDM/extracted/imagenet_ai_0419_vqdm/val/ai/VQDM_1000_200_02_227_vqdm_00035.png

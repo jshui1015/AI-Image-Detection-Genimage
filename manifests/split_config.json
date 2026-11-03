@@ -1,0 +1,112 @@
+{
+  "seed": 20261031,
+  "dataset_root": "/scratch/jshui/GenImage",
+  "label_definition": {
+    "0": "real",
+    "1": "AI-generated"
+  },
+  "generators": [
+    "BigGAN",
+    "stable_diffusion_v_1_4",
+    "ADM"
+  ],
+  "summary": {
+    "train": {
+      "files": 40000,
+      "real": 20000,
+      "fake": 20000,
+      "generators": {
+        "real": 20000,
+        "BigGAN": 6667,
+        "stable_diffusion_v_1_4": 6667,
+        "ADM": 6666
+      },
+      "real_classes": 1000,
+      "fake_classes": 1000,
+      "real_per_class": 20,
+      "fake_per_class": 20,
+      "status": "ready"
+    },
+    "val": {
+      "files": 8000,
+      "real": 4000,
+      "fake": 4000,
+      "generators": {
+        "real": 4000,
+        "BigGAN": 1333,
+        "stable_diffusion_v_1_4": 1333,
+        "ADM": 1334
+      },
+      "real_classes": 1000,
+      "fake_classes": 1000,
+      "real_per_class": 4,
+      "fake_per_class": 4,
+      "status": "ready"
+    },
+    "test_seen": {
+      "files": 10000,
+      "real": 5000,
+      "fake": 5000,
+      "generators": {
+        "real": 5000,
+        "BigGAN": 1667,
+        "stable_diffusion_v_1_4": 1667,
+        "ADM": 1666
+      },
+      "real_classes": 1000,
+      "fake_classes": 1000,
+      "real_per_class": 5,
+      "fake_per_class": 5,
+      "status": "ready"
+    },
+    "reserved_real_glide": {
+      "files": 2000,
+      "real": 2000,
+      "fake": 0,
+      "generators": {
+        "real": 2000
+      },
+      "real_classes": 1000,
+      "fake_classes": 0,
+      "real_per_class": 2,
+      "fake_per_class": 0,
+      "status": "reserved_real_only_missing_fake_generator"
+    },
+    "reserved_real_vqdm": {
+      "files": 2000,
+      "real": 2000,
+      "fake": 0,
+      "generators": {
+        "real": 2000
+      },
+      "real_classes": 1000,
+      "fake_classes": 0,
+      "real_per_class": 2,
+      "fake_per_class": 0,
+      "status": "reserved_real_only_missing_fake_generator"
+    }
+  },
+  "total_selected": 62000,
+  "experimental_train_val_test": 58000,
+  "reserved_real": 4000,
+  "cross_official_source_groups_excluded": 115,
+  "cross_official_candidate_files_excluded": 0,
+  "source_group_policy": "At most one selected image per source group across all five manifests. Exclude any known group spanning official train/val.",
+  "official_boundary_policy": "Train/validation use official train; seen test and reserved reals use official val.",
+  "quota_policy": "Exactly equal real/fake class counts within each ready split; generator counts differ by at most one per class.",
+  "unseen_test_policy": "GLIDE/VQDM absent; files are reserved real halves only, not completed unseen tests. Never use them for model/threshold/calibration selection.",
+  "source_manifest_sha256": "a4df28388fbf28759d58597d43e65b53ad064f3869c5efdb458dd0578c6de85b",
+  "output_sha256": {
+    "train.csv": "288c5549162a139c4f0f2e0d38a15030640748997700779900ff5e1019704a3c",
+    "val.csv": "45cb6360dd21f6becd5391775da5987589ced3cb3b311047e4367d87bd3fc909",
+    "test_seen.csv": "e5a47fade3e399e8f8d158f924da2d81d55fc5c2aa8c9b57df0eda657557c557",
+    "reserved_real_glide.csv": "f7f980a59843c8692f5fca53644aab147a4347c0033910df85e889607519d29f",
+    "reserved_real_vqdm.csv": "9fc2d67d7f8045da9f0fba0ac108dbe19d35ebb88d82984bd693d6006337d075"
+  },
+  "known_limitations": [
+    "No exhaustive crop/rotation matching.",
+    "Perceptual matching within class only; low-information hashes skipped.",
+    "Fake prefix mapping supported by canonical indexes, 0..999 coverage and 18 visual examples; original export naming script unavailable.",
+    "Image source authenticity not independently certified."
+  ]
+}

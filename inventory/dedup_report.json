@@ -1,0 +1,85 @@
+{
+  "input_files": 1003453,
+  "decoded_successfully": 1003440,
+  "invalid_files": 13,
+  "byte_duplicate_groups": 994,
+  "byte_redundant_files": 1002,
+  "pixel_duplicate_groups": 995,
+  "pixel_redundant_files": 1003,
+  "pixel_groups_spanning_official_splits": 115,
+  "conflicting_pixel_groups": 987,
+  "status_counts": {
+    "keep": 1001450,
+    "mapping_or_label_conflict": 1982,
+    "invalid": 13,
+    "duplicate": 8
+  },
+  "kept_groups": [
+    {
+      "generator": "ADM",
+      "label": 1,
+      "official_split": "train",
+      "files": 161994
+    },
+    {
+      "generator": "ADM",
+      "label": 1,
+      "official_split": "val",
+      "files": 6000
+    },
+    {
+      "generator": "BigGAN",
+      "label": 1,
+      "official_split": "train",
+      "files": 161996
+    },
+    {
+      "generator": "BigGAN",
+      "label": 1,
+      "official_split": "val",
+      "files": 6000
+    },
+    {
+      "generator": "real",
+      "label": 0,
+      "official_split": "train",
+      "files": 479580
+    },
+    {
+      "generator": "real",
+      "label": 0,
+      "official_split": "val",
+      "files": 17883
+    },
+    {
+      "generator": "stable_diffusion_v_1_4",
+      "label": 1,
+      "official_split": "train",
+      "files": 161997
+    },
+    {
+      "generator": "stable_diffusion_v_1_4",
+      "label": 1,
+      "official_split": "val",
+      "files": 6000
+    }
+  ],
+  "near_hash_candidates": 572,
+  "near_conservative_pairs": 8,
+  "near_cross_label_pairs": 0,
+  "near_method": {
+    "hash": "64-bit dHash",
+    "maximum_hamming_distance": 3,
+    "maximum_RGB_32x32_RMSE": 3.0,
+    "scope": "within same ImageNet class, exact pixel representatives only",
+    "action": "retain near images, union same-label source groups for future split; no automatic near-image deletion"
+  },
+  "limitations": [
+    "No exhaustive crop/rotation matching.",
+    "Perceptual matching within class only; low-information hashes skipped.",
+    "Fake prefix mapping supported by canonical indexes, 0..999 coverage and 18 visual examples; original export naming script unavailable.",
+    "Image source authenticity not independently certified."
+  ],
+  "conflicting_label_groups": 0,
+  "conflicting_class_groups": 987
+}
