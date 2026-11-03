@@ -1,0 +1,172 @@
+{
+  "seed": 20261031,
+  "device": "cuda",
+  "pretrained": true,
+  "input_control": "cap128_jpeg95",
+  "robust_augment": true,
+  "best_epoch": 2,
+  "best_val_roc_auc": 0.99605365625,
+  "validation_threshold_max_f1": 0.6389479041099548,
+  "validation_at_selected_threshold": {
+    "accuracy": 0.97775,
+    "precision": 0.9711538461538461,
+    "recall": 0.98475,
+    "f1": 0.9779046673286991,
+    "roc_auc": 0.99605365625,
+    "average_precision": 0.9954293537030907,
+    "tn": 3883,
+    "fp": 117,
+    "fn": 61,
+    "tp": 3939
+  },
+  "validation_at_0_5": {
+    "accuracy": 0.976375,
+    "precision": 0.9608222490931076,
+    "recall": 0.99325,
+    "f1": 0.9767670559311616,
+    "roc_auc": 0.99605365625,
+    "average_precision": 0.9954293537030907,
+    "tn": 3838,
+    "fp": 162,
+    "fn": 27,
+    "tp": 3973
+  },
+  "per_generator_validation_at_0_5": {
+    "ADM": {
+      "accuracy": 0.9887556221889056,
+      "precision": 1.0,
+      "recall": 0.9887556221889056,
+      "f1": 0.9943460233697701,
+      "roc_auc": NaN,
+      "average_precision": 0.9999999999999921,
+      "tn": 0,
+      "fp": 0,
+      "fn": 15,
+      "tp": 1319
+    },
+    "BigGAN": {
+      "accuracy": 0.9954988747186797,
+      "precision": 1.0,
+      "recall": 0.9954988747186797,
+      "f1": 0.9977443609022557,
+      "roc_auc": NaN,
+      "average_precision": 0.9999999999999937,
+      "tn": 0,
+      "fp": 0,
+      "fn": 6,
+      "tp": 1327
+    },
+    "real": {
+      "accuracy": 0.9595,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "roc_auc": NaN,
+      "average_precision": NaN,
+      "tn": 3838,
+      "fp": 162,
+      "fn": 0,
+      "tp": 0
+    },
+    "stable_diffusion_v_1_4": {
+      "accuracy": 0.9954988747186797,
+      "precision": 1.0,
+      "recall": 0.9954988747186797,
+      "f1": 0.9977443609022557,
+      "roc_auc": NaN,
+      "average_precision": 0.9999999999999938,
+      "tn": 0,
+      "fp": 0,
+      "fn": 6,
+      "tp": 1327
+    }
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.2893472090959549,
+      "val_at_0_5": {
+        "accuracy": 0.970875,
+        "precision": 0.9492010493679943,
+        "recall": 0.995,
+        "f1": 0.9715610887342854,
+        "roc_auc": 0.99497128125,
+        "average_precision": 0.9936066997225395,
+        "tn": 3787,
+        "fp": 213,
+        "fn": 20,
+        "tp": 3980
+      },
+      "seconds": 73.52
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.1864427572607994,
+      "val_at_0_5": {
+        "accuracy": 0.976375,
+        "precision": 0.9608222490931076,
+        "recall": 0.99325,
+        "f1": 0.9767670559311616,
+        "roc_auc": 0.99605365625,
+        "average_precision": 0.9954293537030907,
+        "tn": 3838,
+        "fp": 162,
+        "fn": 27,
+        "tp": 3973
+      },
+      "seconds": 65.57
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.15953903215527535,
+      "val_at_0_5": {
+        "accuracy": 0.972625,
+        "precision": 0.9643822156718251,
+        "recall": 0.9815,
+        "f1": 0.9728658158840293,
+        "roc_auc": 0.99484625,
+        "average_precision": 0.9936275319131291,
+        "tn": 3855,
+        "fp": 145,
+        "fn": 74,
+        "tp": 3926
+      },
+      "seconds": 66.08
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.1367538317978382,
+      "val_at_0_5": {
+        "accuracy": 0.975,
+        "precision": 0.9712301587301587,
+        "recall": 0.979,
+        "f1": 0.9750996015936254,
+        "roc_auc": 0.9959563125,
+        "average_precision": 0.9951968318763202,
+        "tn": 3884,
+        "fp": 116,
+        "fn": 84,
+        "tp": 3916
+      },
+      "seconds": 66.86
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.11969820391833783,
+      "val_at_0_5": {
+        "accuracy": 0.976125,
+        "precision": 0.9643989270909534,
+        "recall": 0.98875,
+        "f1": 0.9764226638686582,
+        "roc_auc": 0.99596228125,
+        "average_precision": 0.9952544774625431,
+        "tn": 3854,
+        "fp": 146,
+        "fn": 45,
+        "tp": 3955
+      },
+      "seconds": 65.65
+    }
+  ],
+  "smoke_test": false
+}

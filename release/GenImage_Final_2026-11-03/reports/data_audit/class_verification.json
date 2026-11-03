@@ -1,0 +1,158 @@
+{
+  "mapping_records": 1003453,
+  "unresolved": [],
+  "official_repo_mapping_comparison": {
+    "classes": 1000,
+    "canonical_timm_mismatches": 0,
+    "sd_yaml_mismatches": 72,
+    "sd_yaml_rejected": true
+  },
+  "validation_labels": {
+    "source": "https://raw.githubusercontent.com/tensorflow/datasets/master/tensorflow_datasets/datasets/imagenet2012/validation_labels.txt",
+    "rows": 50000
+  },
+  "fake_mapping_status": "0-based filename prefix inferred from range and official generator class indexing; export naming script unavailable; visual spot check required",
+  "groups": [
+    {
+      "dataset": "ADM",
+      "split": "train",
+      "kind": "nature",
+      "classes": 985,
+      "missing_indices": [
+        152,
+        158,
+        165,
+        167,
+        175,
+        190,
+        221,
+        252,
+        268,
+        392,
+        531,
+        596,
+        712,
+        740,
+        841
+      ],
+      "min_count": 4,
+      "max_count": 162
+    },
+    {
+      "dataset": "ADM",
+      "split": "train",
+      "kind": "ai",
+      "classes": 1000,
+      "missing_indices": [],
+      "min_count": 162,
+      "max_count": 162
+    },
+    {
+      "dataset": "ADM",
+      "split": "val",
+      "kind": "nature",
+      "classes": 1000,
+      "missing_indices": [],
+      "min_count": 6,
+      "max_count": 6
+    },
+    {
+      "dataset": "ADM",
+      "split": "val",
+      "kind": "ai",
+      "classes": 1000,
+      "missing_indices": [],
+      "min_count": 6,
+      "max_count": 6
+    },
+    {
+      "dataset": "BigGAN",
+      "split": "train",
+      "kind": "nature",
+      "classes": 1000,
+      "missing_indices": [],
+      "min_count": 162,
+      "max_count": 162
+    },
+    {
+      "dataset": "BigGAN",
+      "split": "train",
+      "kind": "ai",
+      "classes": 1000,
+      "missing_indices": [],
+      "min_count": 162,
+      "max_count": 162
+    },
+    {
+      "dataset": "BigGAN",
+      "split": "val",
+      "kind": "nature",
+      "classes": 1000,
+      "missing_indices": [],
+      "min_count": 6,
+      "max_count": 6
+    },
+    {
+      "dataset": "BigGAN",
+      "split": "val",
+      "kind": "ai",
+      "classes": 1000,
+      "missing_indices": [],
+      "min_count": 6,
+      "max_count": 6
+    },
+    {
+      "dataset": "stable_diffusion_v_1_4",
+      "split": "train",
+      "kind": "nature",
+      "classes": 1000,
+      "missing_indices": [],
+      "min_count": 162,
+      "max_count": 162
+    },
+    {
+      "dataset": "stable_diffusion_v_1_4",
+      "split": "train",
+      "kind": "ai",
+      "classes": 1000,
+      "missing_indices": [],
+      "min_count": 162,
+      "max_count": 162
+    },
+    {
+      "dataset": "stable_diffusion_v_1_4",
+      "split": "val",
+      "kind": "nature",
+      "classes": 1000,
+      "missing_indices": [],
+      "min_count": 6,
+      "max_count": 6
+    },
+    {
+      "dataset": "stable_diffusion_v_1_4",
+      "split": "val",
+      "kind": "ai",
+      "classes": 1000,
+      "missing_indices": [],
+      "min_count": 6,
+      "max_count": 6
+    }
+  ],
+  "visual_spotcheck": {
+    "samples": 18,
+    "class_indices": [
+      0,
+      207,
+      281,
+      417,
+      817,
+      999
+    ],
+    "generators": [
+      "ADM",
+      "BigGAN",
+      "stable_diffusion_v_1_4"
+    ],
+    "result": "All 18 visually consistent with expected class; does not verify every image semantic label."
+  }
+}

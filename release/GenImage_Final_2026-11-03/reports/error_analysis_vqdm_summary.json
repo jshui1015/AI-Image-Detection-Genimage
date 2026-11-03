@@ -1,0 +1,202 @@
+{
+  "n": 4000,
+  "fake_n": 2000,
+  "real_n": 2000,
+  "resnet_fn": 300,
+  "clip_fn": 362,
+  "both_fn": 73,
+  "resnet_only_fn": 227,
+  "clip_only_fn": 289,
+  "resnet_fp": 107,
+  "clip_fp": 226,
+  "classes_with_both_fn": 71,
+  "classes_with_any_resnet_fn": 272,
+  "classes_with_any_clip_fn": 316,
+  "most_common_both_fn_classes": [
+    {
+      "class_index": 379,
+      "fake_count": 2,
+      "resnet_false_negatives": 2,
+      "clip_false_negatives": 2,
+      "both_false_negatives": 2,
+      "mean_resnet_score_fake": 0.2287583276629448,
+      "mean_clip_score_fake": 0.281463660299778
+    },
+    {
+      "class_index": 686,
+      "fake_count": 2,
+      "resnet_false_negatives": 2,
+      "clip_false_negatives": 2,
+      "both_false_negatives": 2,
+      "mean_resnet_score_fake": 0.2403024509549141,
+      "mean_clip_score_fake": 0.3222886472940445
+    },
+    {
+      "class_index": 23,
+      "fake_count": 2,
+      "resnet_false_negatives": 2,
+      "clip_false_negatives": 1,
+      "both_false_negatives": 1,
+      "mean_resnet_score_fake": 0.3250863701105118,
+      "mean_clip_score_fake": 0.5697685331106186
+    },
+    {
+      "class_index": 93,
+      "fake_count": 2,
+      "resnet_false_negatives": 1,
+      "clip_false_negatives": 2,
+      "both_false_negatives": 1,
+      "mean_resnet_score_fake": 0.4162214398384094,
+      "mean_clip_score_fake": 0.2005712315440178
+    },
+    {
+      "class_index": 136,
+      "fake_count": 2,
+      "resnet_false_negatives": 2,
+      "clip_false_negatives": 1,
+      "both_false_negatives": 1,
+      "mean_resnet_score_fake": 0.2695253938436508,
+      "mean_clip_score_fake": 0.562080442905426
+    },
+    {
+      "class_index": 139,
+      "fake_count": 2,
+      "resnet_false_negatives": 2,
+      "clip_false_negatives": 1,
+      "both_false_negatives": 1,
+      "mean_resnet_score_fake": 0.3152133524417877,
+      "mean_clip_score_fake": 0.5588167011737823
+    },
+    {
+      "class_index": 179,
+      "fake_count": 2,
+      "resnet_false_negatives": 2,
+      "clip_false_negatives": 1,
+      "both_false_negatives": 1,
+      "mean_resnet_score_fake": 0.13687825202941895,
+      "mean_clip_score_fake": 0.5270732343196869
+    },
+    {
+      "class_index": 184,
+      "fake_count": 2,
+      "resnet_false_negatives": 1,
+      "clip_false_negatives": 2,
+      "both_false_negatives": 1,
+      "mean_resnet_score_fake": 0.36679521203041077,
+      "mean_clip_score_fake": 0.36237871646881104
+    },
+    {
+      "class_index": 223,
+      "fake_count": 2,
+      "resnet_false_negatives": 1,
+      "clip_false_negatives": 2,
+      "both_false_negatives": 1,
+      "mean_resnet_score_fake": 0.4666430354118347,
+      "mean_clip_score_fake": 0.4151046723127365
+    },
+    {
+      "class_index": 265,
+      "fake_count": 2,
+      "resnet_false_negatives": 2,
+      "clip_false_negatives": 1,
+      "both_false_negatives": 1,
+      "mean_resnet_score_fake": 0.186915785074234,
+      "mean_clip_score_fake": 0.5980671942234039
+    },
+    {
+      "class_index": 284,
+      "fake_count": 2,
+      "resnet_false_negatives": 1,
+      "clip_false_negatives": 2,
+      "both_false_negatives": 1,
+      "mean_resnet_score_fake": 0.6509183794260025,
+      "mean_clip_score_fake": 0.4700291007757187
+    },
+    {
+      "class_index": 286,
+      "fake_count": 2,
+      "resnet_false_negatives": 1,
+      "clip_false_negatives": 2,
+      "both_false_negatives": 1,
+      "mean_resnet_score_fake": 0.5524794086813927,
+      "mean_clip_score_fake": 0.4159900099039078
+    },
+    {
+      "class_index": 359,
+      "fake_count": 2,
+      "resnet_false_negatives": 1,
+      "clip_false_negatives": 2,
+      "both_false_negatives": 1,
+      "mean_resnet_score_fake": 0.502245650626719,
+      "mean_clip_score_fake": 0.3090803995728493
+    },
+    {
+      "class_index": 389,
+      "fake_count": 2,
+      "resnet_false_negatives": 1,
+      "clip_false_negatives": 2,
+      "both_false_negatives": 1,
+      "mean_resnet_score_fake": 0.6042282357811928,
+      "mean_clip_score_fake": 0.3409239798784256
+    },
+    {
+      "class_index": 390,
+      "fake_count": 2,
+      "resnet_false_negatives": 2,
+      "clip_false_negatives": 1,
+      "both_false_negatives": 1,
+      "mean_resnet_score_fake": 0.3403356671333313,
+      "mean_clip_score_fake": 0.6550460904836655
+    },
+    {
+      "class_index": 431,
+      "fake_count": 2,
+      "resnet_false_negatives": 2,
+      "clip_false_negatives": 1,
+      "both_false_negatives": 1,
+      "mean_resnet_score_fake": 0.293542742729187,
+      "mean_clip_score_fake": 0.5525559633970261
+    },
+    {
+      "class_index": 475,
+      "fake_count": 2,
+      "resnet_false_negatives": 2,
+      "clip_false_negatives": 1,
+      "both_false_negatives": 1,
+      "mean_resnet_score_fake": 0.17651496082544327,
+      "mean_clip_score_fake": 0.5592698454856873
+    },
+    {
+      "class_index": 486,
+      "fake_count": 2,
+      "resnet_false_negatives": 2,
+      "clip_false_negatives": 1,
+      "both_false_negatives": 1,
+      "mean_resnet_score_fake": 0.12523774802684784,
+      "mean_clip_score_fake": 0.6044044196605682
+    },
+    {
+      "class_index": 504,
+      "fake_count": 2,
+      "resnet_false_negatives": 1,
+      "clip_false_negatives": 2,
+      "both_false_negatives": 1,
+      "mean_resnet_score_fake": 0.6273017376661301,
+      "mean_clip_score_fake": 0.30836503207683563
+    },
+    {
+      "class_index": 579,
+      "fake_count": 2,
+      "resnet_false_negatives": 2,
+      "clip_false_negatives": 1,
+      "both_false_negatives": 1,
+      "mean_resnet_score_fake": 0.3602202832698822,
+      "mean_clip_score_fake": 0.36422862857580185
+    }
+  ],
+  "thresholds": {
+    "resnet": 0.3726193606853485,
+    "clip": 0.5099092125892639
+  },
+  "interpretation": "Descriptive final-test error analysis only; do not use to adjust thresholds, choose checkpoints, or tune a new model."
+}

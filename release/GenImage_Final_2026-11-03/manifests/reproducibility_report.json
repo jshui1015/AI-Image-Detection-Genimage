@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "seed": 20261031,
+  "matching_files": [
+    "train.csv",
+    "val.csv",
+    "test_seen.csv",
+    "reserved_real_glide.csv",
+    "reserved_real_vqdm.csv",
+    "all_splits.csv",
+    "class_distribution.csv",
+    "split_config.json",
+    "README.md"
+  ],
+  "reproduction_directory": "/tmp/genimage-split-reproduction-v4t7lf73/manifests"
+}

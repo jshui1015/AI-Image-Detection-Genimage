@@ -1,0 +1,27 @@
+{
+  "seed": 20261103,
+  "manifest": "manifests/test_robustness_new.csv",
+  "source": "unused rows from the existing official GenImage/ImageNet validation inventory",
+  "selection": "stable SHA-256 ordering; one real and one fake per class per seen generator",
+  "generators": [
+    "BigGAN",
+    "stable_diffusion_v_1_4",
+    "ADM"
+  ],
+  "images": 6000,
+  "classes": 1000,
+  "unique_image_ids": 6000,
+  "unique_paths": 6000,
+  "unique_source_groups": 6000,
+  "overlap_with_previous_manifests": 0,
+  "counts_by_matched_generator_and_label": {
+    "ADM/label_0": 1000,
+    "ADM/label_1": 1000,
+    "BigGAN/label_0": 1000,
+    "BigGAN/label_1": 1000,
+    "stable_diffusion_v_1_4/label_0": 1000,
+    "stable_diffusion_v_1_4/label_1": 1000
+  },
+  "independence_scope": "image/source-group-disjoint from prior manifests; same underlying GenImage/ImageNet source",
+  "policy": "Evaluate once after model/configuration freeze; do not use for model or threshold selection."
+}
