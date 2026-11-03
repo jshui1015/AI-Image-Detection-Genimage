@@ -6,7 +6,7 @@
 
 详细环境、数据前提和命令见 [REPRODUCIBILITY.md](REPRODUCIBILITY.md)。
 
-## 给队友的交接
+## 交接说明
 
 - **只看结论：** 发送 [`FINAL_REPORT.md`](FINAL_REPORT.md)。
 - **审阅完整产物：** 浏览 [GitHub 上的 release 文件夹](https://github.com/jshui1015/AI-Image-Detection/tree/master/release/GenImage_Final_2026-11-03)，其中包含代码、固定清单、模型权重和报告。克隆仓库后运行 `git lfs pull` 下载 LFS 管理的模型权重。
