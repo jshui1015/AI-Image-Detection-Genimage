@@ -1,3 +1,5 @@
+"""Evaluate one locked detector under fixed image perturbations."""
+
 import csv
 import io
 import json
@@ -6,7 +8,7 @@ from pathlib import Path
 import numpy as np
 import torch
 from PIL import Image, ImageFilter, ImageOps
-from torch.utils.data import Dataset, DataLoader
+from torch.utils.data import DataLoader, Dataset
 
 from train import ROOT, ResNet50, metrics
 
@@ -23,15 +25,21 @@ CONDITIONS = [
     ("blur_r10", ("blur", 1.0)),
 ]
 
+
 class PerturbedTestSet(Dataset):
+    """Create fixed test images for a clean or degraded input condition."""
+
     def __init__(self, rows, perturbation):
+        """Store test rows and the deterministic perturbation condition."""
         self.rows = rows
         self.perturbation = perturbation
 
     def __len__(self):
+        """Return the number of test images."""
         return len(self.rows)
 
     def __getitem__(self, i):
+        """Load one image, apply the selected perturbation, and return its label."""
         r = self.rows[i]
         with Image.open(ROOT / r["path"]) as src:
             im = ImageOps.exif_transpose(src).convert("RGB")
@@ -76,12 +84,14 @@ class PerturbedTestSet(Dataset):
 
         x = torch.from_numpy(np.asarray(im, dtype=np.float32).copy())
         x = x.permute(2, 0, 1).div_(255)
-        mean = x.new_tensor([.485, .456, .406])[:, None, None]
-        std = x.new_tensor([.229, .224, .225])[:, None, None]
+        mean = x.new_tensor([0.485, 0.456, 0.406])[:, None, None]
+        std = x.new_tensor([0.229, 0.224, 0.225])[:, None, None]
         x = (x - mean) / std
         return x, int(r["label"])
 
+
 def main():
+    """Evaluate a locked checkpoint under the predefined test perturbations."""
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     if device.type != "cuda":
         raise RuntimeError("请在已分配 GPU 的节点运行此评估脚本。")
@@ -96,9 +106,7 @@ def main():
     with MANIFEST.open(newline="") as f:
         all_rows = list(csv.DictReader(f))
 
-    rows_by_split = {
-        "test_seen": [r for r in all_rows if r["split"] == "test_seen"]
-    }
+    rows_by_split = {"test_seen": [r for r in all_rows if r["split"] == "test_seen"]}
     for split in ("test_glide_unseen", "test_vqdm_unseen"):
         manifest_path = ROOT / "manifests" / f"{split}.csv"
         with manifest_path.open(newline="") as f:
@@ -116,8 +124,11 @@ def main():
         for condition, perturbation in CONDITIONS:
             dataset = PerturbedTestSet(rows, perturbation)
             loader = DataLoader(
-                dataset, batch_size=64, shuffle=False,
-                num_workers=4, pin_memory=True,
+                dataset,
+                batch_size=64,
+                shuffle=False,
+                num_workers=4,
+                pin_memory=True,
             )
             ys, ps = [], []
             with torch.inference_mode():
@@ -149,6 +160,7 @@ def main():
     out_file = output / "resnet50_perturbations.json"
     out_file.write_text(json.dumps(payload, indent=2))
     print("REPORT", out_file)
+
 
 if __name__ == "__main__":
     main()

@@ -1,3 +1,5 @@
+"""Measure validation performance under predefined image perturbations."""
+
 import csv
 import io
 import json
@@ -7,12 +9,16 @@ from pathlib import Path
 import numpy as np
 import torch
 from PIL import Image, ImageFilter, ImageOps
-from torch.utils.data import Dataset, DataLoader
+from torch.utils.data import DataLoader, Dataset
 
 from train import ROOT, ResNet50, metrics
 
 MANIFEST = ROOT / "manifests/all_splits.csv"
-MODEL_DIR = Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else ROOT / "outputs/resnet50-cap128-jpeg95"
+MODEL_DIR = (
+    Path(sys.argv[1]).resolve()
+    if len(sys.argv) > 1
+    else ROOT / "outputs/resnet50-cap128-jpeg95"
+)
 SPLITS = ["val"]
 CONDITIONS = [
     ("clean", None),
@@ -24,15 +30,21 @@ CONDITIONS = [
     ("blur_r10", ("blur", 1.0)),
 ]
 
+
 class PerturbedTestSet(Dataset):
+    """Create deterministic validation images for one perturbation condition."""
+
     def __init__(self, rows, perturbation):
+        """Store validation rows and the deterministic perturbation condition."""
         self.rows = rows
         self.perturbation = perturbation
 
     def __len__(self):
+        """Return the number of validation images."""
         return len(self.rows)
 
     def __getitem__(self, i):
+        """Load and transform one image while preserving its original label."""
         r = self.rows[i]
         with Image.open(ROOT / r["path"]) as src:
             im = ImageOps.exif_transpose(src).convert("RGB")
@@ -77,12 +89,14 @@ class PerturbedTestSet(Dataset):
 
         x = torch.from_numpy(np.asarray(im, dtype=np.float32).copy())
         x = x.permute(2, 0, 1).div_(255)
-        mean = x.new_tensor([.485, .456, .406])[:, None, None]
-        std = x.new_tensor([.229, .224, .225])[:, None, None]
+        mean = x.new_tensor([0.485, 0.456, 0.406])[:, None, None]
+        std = x.new_tensor([0.229, 0.224, 0.225])[:, None, None]
         x = (x - mean) / std
         return x, int(r["label"])
 
+
 def main():
+    """Measure validation performance across the predefined image perturbations."""
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     if device.type != "cuda":
         raise RuntimeError("请在已分配 GPU 的节点运行此评估脚本。")
@@ -111,8 +125,11 @@ def main():
         for condition, perturbation in CONDITIONS:
             dataset = PerturbedTestSet(rows, perturbation)
             loader = DataLoader(
-                dataset, batch_size=64, shuffle=False,
-                num_workers=4, pin_memory=True,
+                dataset,
+                batch_size=64,
+                shuffle=False,
+                num_workers=4,
+                pin_memory=True,
             )
             ys, ps = [], []
             with torch.inference_mode():
@@ -144,6 +161,7 @@ def main():
     out_file = output / "validation_perturbations.json"
     out_file.write_text(json.dumps(payload, indent=2))
     print("REPORT", out_file)
+
 
 if __name__ == "__main__":
     main()

@@ -8,8 +8,8 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 3106,
-      "sha256": "6129bdca78e2122ae46932f6fae290a382cd662eddb3b718b149b3d3ec1c1f01"
+      "size_bytes": 3100,
+      "sha256": "86ba00201e05e889a2fcdb9b4691d241c4db50f6280cbe28f77a10710bb0b461"
     },
     {
       "path": "REPRODUCIBILITY.md",
@@ -18,28 +18,28 @@
     },
     {
       "path": "clip_detector.py",
-      "size_bytes": 10809,
-      "sha256": "c36b75af8e9ffb400a6e40e2a0f164b62f94d1f33f16229917ac4860c91ed9fb"
+      "size_bytes": 15562,
+      "sha256": "a983a4f605fd3b0e2899ee9c879a1482263b51e9c5e920ca92db89724eafc6fb"
     },
     {
       "path": "demo.py",
-      "size_bytes": 4347,
-      "sha256": "468e584c10e893615fe4af8b3d32cae3d9114f8baecf657b6366e13005038284"
+      "size_bytes": 5791,
+      "sha256": "08eec91c8b678462172c81b525fc936115d208eeb166213b9f2de6e50855f80d"
     },
     {
       "path": "evaluate.py",
-      "size_bytes": 5620,
-      "sha256": "cf124ebd14156496ee6a365ef90b4c3c4414938be9a416c0f449c1eefd3338cf"
+      "size_bytes": 7871,
+      "sha256": "9e4f55b76b7a9f463418488c54a7cdcb2b9d0446b19683e2c296eb4252a3383c"
     },
     {
       "path": "evaluate_robustness_holdout.py",
-      "size_bytes": 5170,
-      "sha256": "bfda9eaed6c20d61bc2147f6517dbb418aa06acc3001234e29544c5573033219"
+      "size_bytes": 5998,
+      "sha256": "0fff8f740af5d15965f7a910217105fa9f54060cb9c75efb51f05c76cf4ef436"
     },
     {
       "path": "evaluate_validation_robustness.py",
-      "size_bytes": 5261,
-      "sha256": "658bceb919659c094ff407c64b68a17d63cc3e8c689e4cfb6a20bce0d8fd826e"
+      "size_bytes": 5792,
+      "sha256": "c339d3a9dc8bbe15386fd31bf51f41bd03d081a708265fc9cad4b6b9b0fef545"
     },
     {
       "path": "manifests/README.md",
@@ -263,28 +263,28 @@
     },
     {
       "path": "scripts/build_robustness_holdout.py",
-      "size_bytes": 4649,
-      "sha256": "8c0b212d572d04e609b2df39019bd7f70371af791e72b7610e3f06e183922778"
+      "size_bytes": 5073,
+      "sha256": "1325aa1708780c1ccab5f596244eaa8050a7d7dccfe317ddd17173ee38c25cb2"
     },
     {
       "path": "scripts/build_splits.py",
-      "size_bytes": 7951,
-      "sha256": "805813efe087133665ceda3e80ed0c6f34badc5242220d82449d25382172ebbf"
+      "size_bytes": 10432,
+      "sha256": "0ac1d7172dff2b39f9ec4cd268cf857fc545f07d3de10eac1ce4f6006a000003"
     },
     {
       "path": "scripts/build_unseen_test_manifests.py",
-      "size_bytes": 3626,
-      "sha256": "b740d14b68814461b33633a8d219caf8ba514e9f74be0acfcc02b95bd3fb3cd7"
+      "size_bytes": 5045,
+      "sha256": "9ea4c85ac0d5a4fe8a75597ff5d386c5b640cae3451f8a3742022f7b4d00afa3"
     },
     {
       "path": "train.py",
-      "size_bytes": 12606,
-      "sha256": "abdb06ca3b4dc4658ca5e41a5fae6566416bdccee92729d050aa9fb27e2a0b5c"
+      "size_bytes": 18781,
+      "sha256": "1fe66e61bb02ea2cdbb593cb4509e1647fe8321171e5f975f21bbcf95336ed5c"
     },
     {
       "path": "train_robust_v2.py",
-      "size_bytes": 12667,
-      "sha256": "5420ab0fae9638099534d323bb2df0a12458e099dafb9283095cf5a2de19bcbe"
+      "size_bytes": 18909,
+      "sha256": "dd636f0ed0322fdfbf82196ebab76e57d10b2134cc65c7557af25ce474f6a08b"
     }
   ]
 }

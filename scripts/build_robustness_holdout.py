@@ -15,11 +15,13 @@ GENERATORS = ("BigGAN", "stable_diffusion_v_1_4", "ADM")
 
 
 def rank_key(row):
+    """Return the deterministic ordering key used for candidate selection."""
     value = f"{SEED}|{row['generator']}|{row['content_class']}|{row['image_id']}"
     return hashlib.sha256(value.encode()).hexdigest()
 
 
 def main():
+    """Build a source-group-isolated holdout from remaining validation images."""
     if OUT.exists() or CONFIG.exists():
         raise SystemExit(f"Refusing to overwrite frozen holdout: {OUT} or {CONFIG}")
 
@@ -60,21 +62,34 @@ def main():
     for cls in classes:
         reals = buckets.get((cls, "real"), [])
         if len(reals) < len(GENERATORS):
-            raise RuntimeError(f"Insufficient unused real images for {cls}: {len(reals)}")
+            raise RuntimeError(
+                f"Insufficient unused real images for {cls}: {len(reals)}"
+            )
         # Allocate three distinct real controls, one to each generator comparison.
-        for gen, real in zip(GENERATORS, reals[:len(GENERATORS)]):
+        for gen, real in zip(GENERATORS, reals[: len(GENERATORS)]):
             fake_rows = buckets.get((cls, gen), [])
             if not fake_rows:
                 raise RuntimeError(f"No unused fake candidate for {cls}/{gen}")
             fake = fake_rows[0]
             for row, matched_gen in ((real, gen), (fake, gen)):
-                if (row["image_id"] in selected_ids or row["path"] in selected_paths
-                        or row["source_group"] in selected_groups):
-                    raise RuntimeError(f"Duplicate image/path/source group at {cls}/{gen}")
+                if (
+                    row["image_id"] in selected_ids
+                    or row["path"] in selected_paths
+                    or row["source_group"] in selected_groups
+                ):
+                    raise RuntimeError(
+                        f"Duplicate image/path/source group at {cls}/{gen}"
+                    )
                 selected_ids.add(row["image_id"])
                 selected_paths.add(row["path"])
                 selected_groups.add(row["source_group"])
-                selected.append({**row, "split": "test_robust_new", "matched_generator": matched_gen})
+                selected.append(
+                    {
+                        **row,
+                        "split": "test_robust_new",
+                        "matched_generator": matched_gen,
+                    }
+                )
 
     fields = list(selected[0])
     OUT.parent.mkdir(parents=True, exist_ok=True)
