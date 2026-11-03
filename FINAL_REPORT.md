@@ -9,19 +9,19 @@
 
 ## 0. 先看结论
 
-1. **数据和清单：**完成 ImageNet/GenImage 数据盘点、映射核实、重复及来源组审计，固定 train/val/test_seen 与 GLIDE/VQDM 清单。审计脚本的检查通过，但类别映射和近重复仍有明确局限。
-2. **基线：**完成 ImageNet 预训练 ResNet-50 和冻结 CLIP ViT-B/32 线性分类头。当前受控 ResNet 验证 AUROC 为 **0.99656**，CLIP 为 **0.98097**。
-3. **鲁棒性：**第一版增强未改善验证集。V2 将干净图和单种退化图混合训练；3个 seed 的验证结果稳定。在新的图片级 holdout 上，V2 对 JPEG、缩放、模糊的 AUROC 均高于基线，干净 AUROC 略低。
-4. **未见生成器：**鲁棒 V2 的选定检查点（seed 20261102）已在固定 GLIDE/VQDM 测试集完成一次性评估；共用 V2 验证阈值0.505398，GLIDE AUROC/AP为0.98287/0.97643，VQDM为0.97230/0.95598。结果未用于继续调参。
-5. **交付：**训练/评估代码、模型权重、清单、结果 JSON、错例资料、Streamlit 演示和复现说明均已整理归档。
+1. **数据和清单：** 完成 ImageNet/GenImage 数据盘点、映射核实、重复及来源组审计，固定 train/val/test_seen 与 GLIDE/VQDM 清单。审计脚本的检查通过，但类别映射和近重复仍有明确局限。
+2. **基线：** 完成 ImageNet 预训练 ResNet-50 和冻结 CLIP ViT-B/32 线性分类头。当前受控 ResNet 验证 AUROC 为 **0.99656**，CLIP 为 **0.98097**。
+3. **鲁棒性：** 第一版增强未改善验证集。V2 将干净图和单种退化图混合训练；3个 seed 的验证结果稳定。在新的图片级 holdout 上，V2 对 JPEG、缩放、模糊的 AUROC 均高于基线，干净 AUROC 略低。
+4. **未见生成器：** 鲁棒 V2 的选定检查点（seed 20261102）已在固定 GLIDE/VQDM 测试集完成一次性评估；共用 V2 验证阈值0.505398，GLIDE AUROC/AP为0.98287/0.97643，VQDM为0.97230/0.95598。结果未用于继续调参。
+5. **交付：** 训练/评估代码、模型权重、清单、结果 JSON、错例资料、Streamlit 演示和复现说明均已整理归档。
 
 ## 一、数据集：来源、审计和标签映射
 
 ### 1.1 数据来源
 
-- **真实图像：**GenImage 配套的 ImageNet 来源真图。
-- **AI 生成图像：**GenImage 中与 ImageNet 类别对应的 BigGAN、Stable Diffusion 1.4、ADM、GLIDE、VQDM 图片。
-- **标签约定：**`label=0` 为真实图，`label=1` 为 AI 生成图。
+- **真实图像：** GenImage 配套的 ImageNet 来源真图。
+- **AI 生成图像：** GenImage 中与 ImageNet 类别对应的 BigGAN、Stable Diffusion 1.4、ADM、GLIDE、VQDM 图片。
+- **标签约定：** `label=0` 为真实图，`label=1` 为 AI 生成图。
 
 ### 1.2 做过的盘点和检查
 
@@ -44,7 +44,7 @@
 - 生成图映射原始导出命名脚本不可用；当前映射依赖规范类别索引与文件名规则，并做了小规模视觉抽查。
 - 因此“无重叠”是按已检查的 image ID、路径和来源组成立，不应写成“已证明不存在任何视觉近重复”。
 
-**产物：**`inventory/` 审计文件、`manifests/` 固定清单和归档中的 `reports/data_audit/`。
+**产物：** `inventory/` 审计文件、`manifests/` 固定清单和归档中的 `reports/data_audit/`。
 
 ## 二、路线与数据划分
 
@@ -75,7 +75,7 @@
 
 在原测试结果已经查看后，从未分配候选中另建一个 **6,000 张**的新 holdout：1000类；BigGAN、SD 1.4、ADM各有1000真图和1000假图。新 holdout 与旧清单的 image ID、路径及已识别 source_group 重叠数均为0。它适合做**图片级独立**比较，但由于仍来自同一 GenImage/ImageNet 官方验证来源，不能称为新数据源测试。
 
-**清单：**`manifests/all_splits.csv`、`test_glide_unseen.csv`、`test_vqdm_unseen.csv`、`test_robustness_new.csv`。新 holdout 配置见 `test_robustness_new_config.json`。
+**清单：** `manifests/all_splits.csv`、`test_glide_unseen.csv`、`test_vqdm_unseen.csv`、`test_robustness_new.csv`。新 holdout 配置见 `test_robustness_new_config.json`。
 
 ## 三、数据偏差控制与图像预处理
 
@@ -175,13 +175,13 @@ Seen 三生成器等权宏平均 AUROC/AP 为 **0.97241 / 0.96120**；GLIDE/VQDM
 
 ## 六、训练框架、阈值和可复现设置
 
-- **主要依赖：**Python 3.11、PyTorch 2.11.0+cu128；GPU 节点 NVIDIA L20。
-- **ResNet loss：**BCEWithLogitsLoss；输入原始 logit。推理时才 sigmoid。
-- **标签：**Real=0，AI-generated=1。
-- **预训练：**ResNet-50 使用官方 ImageNet 权重；CLIP 使用 `openai/clip-vit-base-patch32`。
-- **阈值：**只在对应模型的固定 val 上选一次；同一阈值用于该模型所有测试分组和扰动条件。不同模型阈值不要求相同。
-- **随机性：**数据划分 seed 20261031；V2 三次训练 seeds 为20261031、20261101、20261102。ResNet 基线和 CLIP 各有一次正式训练，尚未做三 seed 重复。
-- **概率校准：**未做温度缩放、Brier Score 或 ECE；界面输出只能称“模型分数”，不能称为可靠概率。
+- **主要依赖：** Python 3.11、PyTorch 2.11.0+cu128；GPU 节点 NVIDIA L20。
+- **ResNet loss：** BCEWithLogitsLoss；输入原始 logit。推理时才 sigmoid。
+- **标签：** Real=0，AI-generated=1。
+- **预训练：** ResNet-50 使用官方 ImageNet 权重；CLIP 使用 `openai/clip-vit-base-patch32`。
+- **阈值：** 只在对应模型的固定 val 上选一次；同一阈值用于该模型所有测试分组和扰动条件。不同模型阈值不要求相同。
+- **随机性：** 数据划分 seed 20261031；V2 三次训练 seeds 为20261031、20261101、20261102。ResNet 基线和 CLIP 各有一次正式训练，尚未做三 seed 重复。
+- **概率校准：** 未做温度缩放、Brier Score 或 ECE；界面输出只能称“模型分数”，不能称为可靠概率。
 
 详见 [REPRODUCIBILITY.md](REPRODUCIBILITY.md) 的环境安装、命令和输出目录说明。所有训练需要使用新输出目录，避免覆盖已归档检查点。
 
@@ -231,9 +231,9 @@ V2 的训练规则：
 
 ### 8.2 已见/未见生成器评估
 
-- **已见：**test_seen 分别报告 ADM、BigGAN、SD 1.4 与同类别真实图的比较，也提供等权宏平均。
-- **未见：**分别报告 GLIDE、VQDM，并另算两者等权宏平均；不与已见生成器平均混为一谈。
-- **V2 状态：**本节上方旧测试表仍是 ResNet/CLIP 基线；选定的鲁棒 V2 已另在固定 GLIDE/VQDM 未见测试清单上完成一次性最终评估，结果见第4.4节。
+- **已见：** test_seen 分别报告 ADM、BigGAN、SD 1.4 与同类别真实图的比较，也提供等权宏平均。
+- **未见：** 分别报告 GLIDE、VQDM，并另算两者等权宏平均；不与已见生成器平均混为一谈。
+- **V2 状态：** 本节上方旧测试表仍是 ResNet/CLIP 基线；选定的鲁棒 V2 已另在固定 GLIDE/VQDM 未见测试清单上完成一次性最终评估，结果见第4.4节。
 
 ### 8.3 图像扰动定义
 
@@ -302,12 +302,12 @@ streamlit run demo.py --server.address 0.0.0.0 --server.port 8501
 
 ### 未完成或结论受限
 
-1. **V2 对 GLIDE/VQDM 的未见生成器测试：**已完成选定 seed 的一次性测试。尚无 V2 多 seed 的未见生成器均值/标准差；也没有可用于重新选择模型的额外未见测试生成器。
-2. **外部独立数据源测试：**未做。新 holdout 与旧图片分离，但同属 GenImage/ImageNet。
-3. **多个随机种子的基线/CLIP测试：**未做；只有 V2 做了3个 seed 的验证鲁棒性比较。
-4. **概率校准：**未做温度缩放、Brier Score 或 ECE。
-5. **彻底同源图像识别与逐张语义认证：**受限于近重复算法和人工抽查规模。
-6. **偏差对照的独立确认：**早期 test_seen 输入控制结果参与了预处理探索，因此不能作为完全无偏的因果结论。
+1. **V2 对 GLIDE/VQDM 的未见生成器测试：** 已完成选定 seed 的一次性测试。尚无 V2 多 seed 的未见生成器均值/标准差；也没有可用于重新选择模型的额外未见测试生成器。
+2. **外部独立数据源测试：** 未做。新 holdout 与旧图片分离，但同属 GenImage/ImageNet。
+3. **多个随机种子的基线/CLIP测试：** 未做；只有 V2 做了3个 seed 的验证鲁棒性比较。
+4. **概率校准：** 未做温度缩放、Brier Score 或 ECE。
+5. **彻底同源图像识别与逐张语义认证：** 受限于近重复算法和人工抽查规模。
+6. **偏差对照的独立确认：** 早期 test_seen 输入控制结果参与了预处理探索，因此不能作为完全无偏的因果结论。
 
 ## 十二、主要结果文件和参考资料
 

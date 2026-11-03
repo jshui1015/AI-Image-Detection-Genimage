@@ -8,9 +8,9 @@
 
 ## 给队友的交接
 
-- **只看结论：**发送 [`FINAL_REPORT.md`](FINAL_REPORT.md)。
-- **审阅完整产物：**发送 [`release/GenImage_Final_2026-11-03.tar`](release/GenImage_Final_2026-11-03.tar)，约405 MB；包内目录和文件说明见归档版 [`README.md`](release/GenImage_Final_2026-11-03/README.md)。
-- **复现实验：**除归档包外，还需要原始图像目录和兼容的 GPU/Conda 环境。原始图像没有包含在归档中；清单路径相对于项目根目录。共享集群上请使用队友自己有权限访问的项目根目录。CLIP 包内只有线性分类头，CLIP ViT-B/32 编码器权重需单独获取或使用已有缓存。
+- **只看结论：** 发送 [`FINAL_REPORT.md`](FINAL_REPORT.md)。
+- **审阅完整产物：** 发送 [`release/GenImage_Final_2026-11-03.tar`](release/GenImage_Final_2026-11-03.tar)，约405 MB；包内目录和文件说明见归档版 [`README.md`](release/GenImage_Final_2026-11-03/README.md)。
+- **复现实验：** 除归档包外，还需要原始图像目录和兼容的 GPU/Conda 环境。原始图像没有包含在归档中；清单路径相对于项目根目录。共享集群上请使用队友自己有权限访问的项目根目录。CLIP 包内只有线性分类头，CLIP ViT-B/32 编码器权重需单独获取或使用已有缓存。
 
 不要把最终测试结果用于继续挑选模型、阈值或增强配置。V2 的新 holdout 扰动测试覆盖 BigGAN、SD 1.4、ADM；另已在固定 GLIDE/VQDM 未见生成器集上完成一次性测试，汇总见 `FINAL_REPORT.md` 第4.4节。
 

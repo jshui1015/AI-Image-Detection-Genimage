@@ -237,7 +237,7 @@ python evaluate_robustness_holdout.py outputs/resnet50-robust-v2-seed20261102
 
 需要两个终端窗口：一个在集群 GPU 节点运行 Streamlit，另一个在个人电脑保持 SSH 隧道。`gpu21` 是示例节点名；每次 Slurm 分配可能不同，应使用当前 `hostname` 输出替换。
 
-**GPU 节点终端：**在项目目录和已激活的 Conda 环境中启动：
+**GPU 节点终端：** 在项目目录和已激活的 Conda 环境中启动：
 
 ```bash
 cd "$PROJECT_ROOT"
@@ -246,7 +246,7 @@ streamlit run demo.py --server.address 0.0.0.0 --server.port 8501
 
 保持这个 Slurm 交互作业和 Streamlit 进程运行。
 
-**个人电脑终端：**执行本地端口转发。下面沿用用户名 `jshui`、登录节点 `login2` 和 GPU 节点 `gpu21` 作为示例；队友需把用户名、SSH 登录主机/别名和当前 GPU 节点替换成自己的实际值。
+**个人电脑终端：** 执行本地端口转发。下面沿用用户名 `jshui`、登录节点 `login2` 和 GPU 节点 `gpu21` 作为示例；队友需把用户名、SSH 登录主机/别名和当前 GPU 节点替换成自己的实际值。
 
 ```bash
 ssh -N -L 8501:gpu21:8501 jshui@login2
