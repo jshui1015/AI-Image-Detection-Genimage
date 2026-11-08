@@ -1,0 +1,74 @@
+{
+  "resnet-20261031": {
+    "temperature": 1.0200723907954212,
+    "val_nll_before": 0.06198640839568597,
+    "val_nll_after": 0.06196875219708993,
+    "near_search_boundary": false,
+    "fit_split": "val only",
+    "limitation": "Same validation split was also used for checkpoint/threshold selection; validation calibration is in-sample."
+  },
+  "resnet-20261101": {
+    "temperature": 1.169833052666535,
+    "val_nll_before": 0.0678939647681632,
+    "val_nll_after": 0.06672311858011898,
+    "near_search_boundary": false,
+    "fit_split": "val only",
+    "limitation": "Same validation split was also used for checkpoint/threshold selection; validation calibration is in-sample."
+  },
+  "resnet-20261102": {
+    "temperature": 1.0716733318067062,
+    "val_nll_before": 0.05599062068976377,
+    "val_nll_after": 0.05581165463610434,
+    "near_search_boundary": false,
+    "fit_split": "val only",
+    "limitation": "Same validation split was also used for checkpoint/threshold selection; validation calibration is in-sample."
+  },
+  "v2-20261031": {
+    "temperature": 0.9389414350739599,
+    "val_nll_before": 0.06931065278145741,
+    "val_nll_after": 0.06909926743508396,
+    "near_search_boundary": false,
+    "fit_split": "val only",
+    "limitation": "Same validation split was also used for checkpoint/threshold selection; validation calibration is in-sample."
+  },
+  "v2-20261101": {
+    "temperature": 0.5592470203634388,
+    "val_nll_before": 0.08226415431252612,
+    "val_nll_after": 0.06469574262608578,
+    "near_search_boundary": false,
+    "fit_split": "val only",
+    "limitation": "Same validation split was also used for checkpoint/threshold selection; validation calibration is in-sample."
+  },
+  "v2-20261102": {
+    "temperature": 1.1289891164995456,
+    "val_nll_before": 0.06809671185217289,
+    "val_nll_after": 0.06741235565371552,
+    "near_search_boundary": false,
+    "fit_split": "val only",
+    "limitation": "Same validation split was also used for checkpoint/threshold selection; validation calibration is in-sample."
+  },
+  "clip-20261031": {
+    "temperature": 0.5452452360335115,
+    "val_nll_before": 0.2088946125033395,
+    "val_nll_after": 0.1712027810409288,
+    "near_search_boundary": false,
+    "fit_split": "val only",
+    "limitation": "Same validation split was also used for checkpoint/threshold selection; validation calibration is in-sample."
+  },
+  "clip-20261101": {
+    "temperature": 0.5446377967464081,
+    "val_nll_before": 0.20899720787704332,
+    "val_nll_after": 0.1711876550908579,
+    "near_search_boundary": false,
+    "fit_split": "val only",
+    "limitation": "Same validation split was also used for checkpoint/threshold selection; validation calibration is in-sample."
+  },
+  "clip-20261102": {
+    "temperature": 0.5447173602063392,
+    "val_nll_before": 0.20905221877976493,
+    "val_nll_after": 0.17123794127990194,
+    "near_search_boundary": false,
+    "fit_split": "val only",
+    "limitation": "Same validation split was also used for checkpoint/threshold selection; validation calibration is in-sample."
+  }
+}

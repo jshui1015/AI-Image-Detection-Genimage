@@ -1,0 +1,13 @@
+{
+  "source": "https://github.com/jordan-bird/CIFAKE-Real-and-AI-Generated-Synthetic-Images.git",
+  "commit": "e112a942abaecd02b6b1f6f646c807d56be8fb62",
+  "manifest_sha256": "1947f518bb6b58eb95a144a862ff6b49699fdd2db9fc58ba64dd72dc4ac99678",
+  "input_control": "cap128_jpeg95",
+  "selection": "all official test/REAL and test/FAKE; 10000 each",
+  "model_count": 9,
+  "fit_on_external_data": false,
+  "threshold_source": "original GenImage validation",
+  "temperature_source": "completed phase2 GenImage validation fitting",
+  "interpretation": "Cross-dataset evaluation, not an unseen-generator benchmark; SD1.4 already seen in GenImage.",
+  "resolution_note": "Low-resolution CIFAKE is a substantial domain shift; do not interpret as universal deployment accuracy."
+}

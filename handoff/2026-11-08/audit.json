@@ -1,0 +1,10 @@
+{
+  "external_npz_checked": 9,
+  "external_metric_rows_checked": 18,
+  "label_mapping": "REAL=0; FAKE=1; verified against paths",
+  "original_images": 20000,
+  "unique_file_hashes": 19962,
+  "dedup_max_absolute_auc_change": 0.0006588087201365167,
+  "fixed_decisions_preserved": true,
+  "internal_csv_audit": "69 files verified earlier; phase2 57 NPZ and 114 metrics verified earlier"
+}

@@ -1,0 +1,12 @@
+PASSED resnet-20261031
+PASSED resnet-20261101
+PASSED resnet-20261102
+PASSED v2-20261031
+PASSED v2-20261101
+PASSED v2-20261102
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 38027.54it/s]
+Extracted followup_external: 5561 images in 32.3s -> /scratch/tyangbj/AI-Image-Detection/outputs/followup-20261108-DVbELg/features/followup_external.pt
+PASSED clip-20261031
+PASSED clip-20261101
+PASSED clip-20261102
+SUCCESS: consistency and external inference complete

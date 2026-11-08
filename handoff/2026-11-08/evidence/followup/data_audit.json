@@ -1,0 +1,15 @@
+{
+  "images": 5305,
+  "real": 1061,
+  "fake": 4244,
+  "source_groups": 1061,
+  "bootstrap_groups_after_duplicate_union": 1061,
+  "dimensions": {
+    "640x480": 3183,
+    "1152x864": 2122
+  },
+  "duplicates": [],
+  "overlaps": [],
+  "prior_images_checked": 92000,
+  "limitations": "Exact bytes and decoded RGB only; does not exclude near duplicates or pretraining exposure."
+}

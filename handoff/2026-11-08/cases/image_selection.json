@@ -1,0 +1,112 @@
+[
+  {
+    "dataset": "CIFAKE",
+    "model": "resnet-20261031",
+    "error": "false_negative",
+    "path": "DATASET/test/FAKE/937 (7).jpg",
+    "label": 1,
+    "p_ai": 4.8604484022998455e-06,
+    "threshold": 0.3726193606853485,
+    "image_sha256": "a5ac04e24bad67d2b62447d526dee68e2d5350eb0f2ba71a4ea1a4ffd66a6cc6"
+  },
+  {
+    "dataset": "CIFAKE",
+    "model": "resnet-20261031",
+    "error": "false_negative",
+    "path": "DATASET/test/FAKE/934 (2).jpg",
+    "label": 1,
+    "p_ai": 6.096360547613928e-06,
+    "threshold": 0.3726193606853485,
+    "image_sha256": "3272be5539c448d589f608635ae3a0dd636b1e0a95681643d5ebdfd69e3390b2"
+  },
+  {
+    "dataset": "CIFAKE",
+    "model": "resnet-20261031",
+    "error": "false_negative",
+    "path": "DATASET/test/FAKE/564 (3).jpg",
+    "label": 1,
+    "p_ai": 6.388929129736718e-06,
+    "threshold": 0.3726193606853485,
+    "image_sha256": "b5401557cd32bdafc135b1d0305df67172adf198f8f63652fa667da1ef1d04df"
+  },
+  {
+    "dataset": "CIFAKE",
+    "model": "resnet-20261031",
+    "error": "false_positive",
+    "path": "DATASET/test/REAL/0037 (7).jpg",
+    "label": 0,
+    "p_ai": 0.9683213752172551,
+    "threshold": 0.3726193606853485,
+    "image_sha256": "14623418b1abc9210c2c284f54d3633d950273c424d056fa47366daaec08388d"
+  },
+  {
+    "dataset": "CIFAKE",
+    "model": "v2-20261031",
+    "error": "false_negative",
+    "path": "DATASET/test/FAKE/992 (8).jpg",
+    "label": 1,
+    "p_ai": 2.2508450454116207e-08,
+    "threshold": 0.6389479041099548,
+    "image_sha256": "17559df4cc576195eca1b15a866e4b5974f911b7626b00cbad26c7bc714b5dff"
+  },
+  {
+    "dataset": "CIFAKE",
+    "model": "v2-20261031",
+    "error": "false_negative",
+    "path": "DATASET/test/FAKE/840 (4).jpg",
+    "label": 1,
+    "p_ai": 8.628370400585421e-08,
+    "threshold": 0.6389479041099548,
+    "image_sha256": "ae51793157c97b59befa08455cbd8a14cfa6f61ff2b7815969b7863e6509b6d1"
+  },
+  {
+    "dataset": "CIFAKE",
+    "model": "v2-20261031",
+    "error": "false_negative",
+    "path": "DATASET/test/FAKE/964 (8).jpg",
+    "label": 1,
+    "p_ai": 1.1610741114742289e-07,
+    "threshold": 0.6389479041099548,
+    "image_sha256": "ebad54d3da0f7aaa7c2cc0138a6ff8d295d5ccb12fdda2de4010faaa435ef02d"
+  },
+  {
+    "dataset": "CIFAKE",
+    "model": "clip-20261031",
+    "error": "false_negative",
+    "path": "DATASET/test/FAKE/776 (10).jpg",
+    "label": 1,
+    "p_ai": 0.0018937448521425702,
+    "threshold": 0.5099092125892639,
+    "image_sha256": "c2029bf41512444d9263a78afaaa5084a6bc725742035aa11e71375f22bf622c"
+  },
+  {
+    "dataset": "CIFAKE",
+    "model": "clip-20261031",
+    "error": "false_negative",
+    "path": "DATASET/test/FAKE/248 (3).jpg",
+    "label": 1,
+    "p_ai": 0.0022977642721236356,
+    "threshold": 0.5099092125892639,
+    "image_sha256": "b5881daa7fcd0c4ff5f2ed0271d9c7e4f5d78bf56a32318eefa8774ad6e24021"
+  },
+  {
+    "dataset": "CIFAKE",
+    "model": "clip-20261031",
+    "error": "false_negative",
+    "path": "DATASET/test/FAKE/796 (10).jpg",
+    "label": 1,
+    "p_ai": 0.0023382629468199525,
+    "threshold": 0.5099092125892639,
+    "image_sha256": "b636c77a610d77fdc70d044d1286543810d11122fe47d0b3d232f4e95e80a9d2"
+  },
+  {
+    "dataset": "CIFAKE",
+    "model": "clip-20261031",
+    "error": "false_positive",
+    "path": "DATASET/test/REAL/0785 (3).jpg",
+    "label": 0,
+    "p_ai": 0.7591876807459749,
+    "threshold": 0.5099092125892639,
+    "image_sha256": "76121e805c688a10bc5819b23563e9bfa02c2671a5a8a035bd916e767267ac08"
+  }
+]

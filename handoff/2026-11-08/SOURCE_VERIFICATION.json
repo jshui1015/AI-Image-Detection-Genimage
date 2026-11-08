@@ -1,0 +1,25 @@
+{
+  "base_commit": "8919f28e5b679f3a322cb7896175afcb56b485a8",
+  "files": {
+    "train.py": {
+      "expected": "1fe66e61bb02ea2cdbb593cb4509e1647fe8321171e5f975f21bbcf95336ed5c",
+      "actual": "1fe66e61bb02ea2cdbb593cb4509e1647fe8321171e5f975f21bbcf95336ed5c",
+      "matches": true
+    },
+    "clip_detector.py": {
+      "expected": "a983a4f605fd3b0e2899ee9c879a1482263b51e9c5e920ca92db89724eafc6fb",
+      "actual": "a983a4f605fd3b0e2899ee9c879a1482263b51e9c5e920ca92db89724eafc6fb",
+      "matches": true
+    },
+    "evaluate.py": {
+      "expected": "9e4f55b76b7a9f463418488c54a7cdcb2b9d0446b19683e2c296eb4252a3383c",
+      "actual": "9e4f55b76b7a9f463418488c54a7cdcb2b9d0446b19683e2c296eb4252a3383c",
+      "matches": true
+    },
+    "evaluate_robustness_holdout.py": {
+      "expected": "0fff8f740af5d15965f7a910217105fa9f54060cb9c75efb51f05c76cf4ef436",
+      "actual": "0fff8f740af5d15965f7a910217105fa9f54060cb9c75efb51f05c76cf4ef436",
+      "matches": true
+    }
+  }
+}

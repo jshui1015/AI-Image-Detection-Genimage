@@ -1,0 +1,4 @@
+prepare=2227671
+gpu=2227672
+analysis=2227673
+output=/scratch/tyangbj/AI-Image-Detection/outputs/cifake-external-20261108-154531

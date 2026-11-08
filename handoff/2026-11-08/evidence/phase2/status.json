@@ -1,0 +1,7 @@
+{
+  "finished": true,
+  "models": 9,
+  "clip_holdout_conditions": 7,
+  "temperature_fitted_on_test": false,
+  "note": "Threshold transformed with temperature to preserve the original decision rule. No claim of external-domain validation."
+}

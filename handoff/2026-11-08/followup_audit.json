@@ -1,0 +1,12 @@
+{
+  "finished": true,
+  "external_metric_rows_recomputed": 90,
+  "external_predictions_checked": 47745,
+  "consistency_comparisons_recomputed": 36,
+  "max_probability_difference": 2.3200512544452323e-07,
+  "decision_mismatches": 0,
+  "external_bootstrap_replicates_per_cell_reproduced": 2000,
+  "external_primary_summary_and_intervals_reproduced": true,
+  "data_audit": "Server records 92000 old images checked, zero exact-byte/decoded-RGB overlap; original images not downloaded for independent rehash locally",
+  "holdout_intervals": "Server computation; local weighted-AUROC and pairing tests passed; source class manifest remains on server"
+}

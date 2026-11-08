@@ -1,0 +1,38 @@
+[
+  {
+    "family": "resnet_and_v2",
+    "domain": "test_seen",
+    "count": 64,
+    "exact_tensor_match": true
+  },
+  {
+    "family": "resnet_and_v2",
+    "domain": "test_glide_unseen",
+    "count": 64,
+    "exact_tensor_match": true
+  },
+  {
+    "family": "resnet_and_v2",
+    "domain": "test_vqdm_unseen",
+    "count": 64,
+    "exact_tensor_match": true
+  },
+  {
+    "family": "clip",
+    "domain": "test_seen",
+    "count": 64,
+    "exact_tensor_match": true
+  },
+  {
+    "family": "clip",
+    "domain": "test_glide_unseen",
+    "count": 64,
+    "exact_tensor_match": true
+  },
+  {
+    "family": "clip",
+    "domain": "test_vqdm_unseen",
+    "count": 64,
+    "exact_tensor_match": true
+  }
+]

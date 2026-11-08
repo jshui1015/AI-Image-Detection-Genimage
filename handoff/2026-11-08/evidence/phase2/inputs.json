@@ -1,0 +1,61 @@
+{
+  "models": {
+    "resnet-20261031": {
+      "path": "/project/mscaiehpc42026/AI-Image-Detection/data/outputs/resnet50-cap128-jpeg95",
+      "sha256": "791a80c96309edaa3678cb1c755442a38a0ec1c62fbbfc7ba58b32a07edbd075",
+      "threshold": 0.3726193606853485
+    },
+    "resnet-20261101": {
+      "path": "/scratch/tyangbj/AI-Image-Detection/outputs/completion-resnet-seed20261101-2218236",
+      "sha256": "33f738e3d55eb81e79de89a079d02f7a1fd8c6d64da18c664c994893b7fd55bb",
+      "threshold": 0.5524793863296509
+    },
+    "resnet-20261102": {
+      "path": "/scratch/tyangbj/AI-Image-Detection/outputs/completion-resnet-seed20261102-2218236",
+      "sha256": "69353653487611062a045abd681183d99a1a23e2e9b3efa021ef87ed2ae635ba",
+      "threshold": 0.37817198038101196
+    },
+    "v2-20261031": {
+      "path": "/project/mscaiehpc42026/AI-Image-Detection/data/outputs/resnet50-robust-v2-complete",
+      "sha256": "3f23f1b59618dbb9ba68f59abf8a542a3f53bab857a8d1811fb7c4e9a8116cb4",
+      "threshold": 0.6389479041099548
+    },
+    "v2-20261101": {
+      "path": "/project/mscaiehpc42026/AI-Image-Detection/data/outputs/resnet50-robust-v2-seed20261101",
+      "sha256": "77c0644ac559b315a48174f96a50c279f5aa9c48df5216d262b0bdb812e41048",
+      "threshold": 0.507712721824646
+    },
+    "v2-20261102": {
+      "path": "/project/mscaiehpc42026/AI-Image-Detection/data/outputs/resnet50-robust-v2-seed20261102",
+      "sha256": "fc53d4730ce7829c7f59dbed6902ce90612dcbe40501e6dacfaa86cc6f3c6b09",
+      "threshold": 0.5053975582122803
+    },
+    "clip-20261031": {
+      "path": "/scratch/tyangbj/AI-Image-Detection/outputs/completion-batch-2218770/clip-20261031",
+      "sha256": "b8292fb03aa06d6c083f9887c6123883e43fe475d0d10efafdc5ad6f3ac27bed",
+      "threshold": 0.5099092125892639
+    },
+    "clip-20261101": {
+      "path": "/scratch/tyangbj/AI-Image-Detection/outputs/completion-batch-2218770/clip-20261101",
+      "sha256": "0ad1a5e4aeaaeb50324e38771be6b2bf349e1ce9d2dc9aeb8f205020f63daeb4",
+      "threshold": 0.5084024667739868
+    },
+    "clip-20261102": {
+      "path": "/scratch/tyangbj/AI-Image-Detection/outputs/completion-batch-2218770/clip-20261102",
+      "sha256": "e78a792f137eaaadcdd77a3539af4a05662c1f4bea391bb400e2167cfb614f41",
+      "threshold": 0.5034454464912415
+    }
+  },
+  "manifests": {
+    "test_glide_unseen.csv": "1cd037c3404fc05f37a03b43e195bf7e82dcebe8b416abbb27adc99cf770817a",
+    "reserved_real_glide.csv": "f7f980a59843c8692f5fca53644aab147a4347c0033910df85e889607519d29f",
+    "test_seen.csv": "e5a47fade3e399e8f8d158f924da2d81d55fc5c2aa8c9b57df0eda657557c557",
+    "test_vqdm_unseen.csv": "dbb0315652af296f89663997560cd995c15fdac575e81c770cd149cd6feb2c84",
+    "train.csv": "288c5549162a139c4f0f2e0d38a15030640748997700779900ff5e1019704a3c",
+    "test_robustness_new.csv": "1920eacab6c5cb87955abe3550efed6a07bfbd7863bfd25b0d251c2fb9014649",
+    "class_distribution.csv": "f7f788292f01ebb04844221166ec41518f4fd2dbee7fd57982752b9ddc405683",
+    "reserved_real_vqdm.csv": "9fc2d67d7f8045da9f0fba0ac108dbe19d35ebb88d82984bd693d6006337d075",
+    "val.csv": "45cb6360dd21f6becd5391775da5987589ced3cb3b311047e4367d87bd3fc909",
+    "all_splits.csv": "1c28a17c3225eeb58c0a5b8cfdc4b1613096c1e9b86adfd3a5d663f6c17ae524"
+  }
+}

@@ -1,0 +1,12 @@
+DONE resnet-20261031
+DONE resnet-20261101
+DONE resnet-20261102
+DONE v2-20261031
+DONE v2-20261101
+DONE v2-20261102
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 33104.61it/s]
+Extracted cifake_external: 20000 images in 8.0s -> /scratch/tyangbj/AI-Image-Detection/outputs/cifake-external-20261108-154531/features/cifake_external.pt
+DONE clip-20261031
+DONE clip-20261101
+DONE clip-20261102
+SUCCESS: all nine external predictions complete

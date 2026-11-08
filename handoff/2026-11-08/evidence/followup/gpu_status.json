@@ -1,0 +1,7 @@
+{
+  "finished": true,
+  "gpu": "NVIDIA L20",
+  "models": 9,
+  "checks_per_model": 256,
+  "external_images": 5305
+}

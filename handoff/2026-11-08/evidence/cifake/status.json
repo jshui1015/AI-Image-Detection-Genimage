@@ -1,0 +1,7 @@
+{
+  "finished": true,
+  "models": 9,
+  "images_per_model": 20000,
+  "external_training_or_tuning": false,
+  "decisions_preserved_after_calibration": true
+}

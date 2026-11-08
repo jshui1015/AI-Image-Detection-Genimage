@@ -1,0 +1,4 @@
+prepare=2227379
+gpu=2227380
+analysis=2227381
+output=/scratch/tyangbj/AI-Image-Detection/outputs/phase2-20261108-144532

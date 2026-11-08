@@ -1,0 +1,9 @@
+{
+  "finished": true,
+  "models": 9,
+  "external_images": 5305,
+  "consistency_checks_per_model": 256,
+  "gpu_allocations_required": 1,
+  "training_or_threshold_tuning": false,
+  "original_inputs_hash_verified": true
+}

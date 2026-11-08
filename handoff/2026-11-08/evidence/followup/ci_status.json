@@ -1,0 +1,7 @@
+{
+  "finished": true,
+  "resampling_unit": "1000 semantic-class blocks, preserving all labels/generators and perturbation pairing",
+  "reps": 2000,
+  "seed": 20261108,
+  "interpretation": "Conditional uncertainty for these nine fixed fitted models; not training-population uncertainty. Three-condition adjusted intervals provided per metric; other comparisons exploratory."
+}

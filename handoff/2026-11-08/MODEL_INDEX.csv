@@ -1,0 +1,10 @@
+model,checkpoint_server_path,sha256,validation_threshold,origin
+resnet-20261031,/project/mscaiehpc42026/AI-Image-Detection/data/outputs/resnet50-cap128-jpeg95/best.pt,791a80c96309edaa3678cb1c755442a38a0ec1c62fbbfc7ba58b32a07edbd075,0.3726193606853485,original teammate checkpoint
+resnet-20261101,/scratch/tyangbj/AI-Image-Detection/outputs/completion-resnet-seed20261101-2218236/best.pt,33f738e3d55eb81e79de89a079d02f7a1fd8c6d64da18c664c994893b7fd55bb,0.5524793863296509,supplementary training
+resnet-20261102,/scratch/tyangbj/AI-Image-Detection/outputs/completion-resnet-seed20261102-2218236/best.pt,69353653487611062a045abd681183d99a1a23e2e9b3efa021ef87ed2ae635ba,0.37817198038101196,supplementary training
+v2-20261031,/project/mscaiehpc42026/AI-Image-Detection/data/outputs/resnet50-robust-v2-complete/best.pt,3f23f1b59618dbb9ba68f59abf8a542a3f53bab857a8d1811fb7c4e9a8116cb4,0.6389479041099548,original teammate checkpoint
+v2-20261101,/project/mscaiehpc42026/AI-Image-Detection/data/outputs/resnet50-robust-v2-seed20261101/best.pt,77c0644ac559b315a48174f96a50c279f5aa9c48df5216d262b0bdb812e41048,0.507712721824646,original teammate checkpoint
+v2-20261102,/project/mscaiehpc42026/AI-Image-Detection/data/outputs/resnet50-robust-v2-seed20261102/best.pt,fc53d4730ce7829c7f59dbed6902ce90612dcbe40501e6dacfaa86cc6f3c6b09,0.5053975582122803,original teammate checkpoint
+clip-20261031,/scratch/tyangbj/AI-Image-Detection/outputs/completion-batch-2218770/clip-20261031/best.pt,b8292fb03aa06d6c083f9887c6123883e43fe475d0d10efafdc5ad6f3ac27bed,0.5099092125892639,original CLIP head reused in completion batch
+clip-20261101,/scratch/tyangbj/AI-Image-Detection/outputs/completion-batch-2218770/clip-20261101/best.pt,0ad1a5e4aeaaeb50324e38771be6b2bf349e1ce9d2dc9aeb8f205020f63daeb4,0.5084024667739868,supplementary training
+clip-20261102,/scratch/tyangbj/AI-Image-Detection/outputs/completion-batch-2218770/clip-20261102/best.pt,e78a792f137eaaadcdd77a3539af4a05662c1f4bea391bb400e2167cfb614f41,0.5034454464912415,supplementary training

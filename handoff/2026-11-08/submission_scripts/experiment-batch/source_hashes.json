@@ -1,0 +1,6 @@
+{
+  "train.py": "1fe66e61bb02ea2cdbb593cb4509e1647fe8321171e5f975f21bbcf95336ed5c",
+  "clip_detector.py": "a983a4f605fd3b0e2899ee9c879a1482263b51e9c5e920ca92db89724eafc6fb",
+  "evaluate.py": "9e4f55b76b7a9f463418488c54a7cdcb2b9d0446b19683e2c296eb4252a3383c",
+  "evaluate_robustness_holdout.py": "0fff8f740af5d15965f7a910217105fa9f54060cb9c75efb51f05c76cf4ef436"
+}

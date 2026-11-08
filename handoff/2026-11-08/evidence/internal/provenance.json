@@ -1,0 +1,43 @@
+{
+  "commit": "8919f28e5b679f3a322cb7896175afcb56b485a8",
+  "gpu": "NVIDIA L20",
+  "models": [
+    {
+      "name": "resnet-20261031",
+      "path": "/project/mscaiehpc42026/AI-Image-Detection/data/outputs/resnet50-cap128-jpeg95",
+      "seed": 20261031,
+      "checkpoint_sha256": "791a80c96309edaa3678cb1c755442a38a0ec1c62fbbfc7ba58b32a07edbd075"
+    },
+    {
+      "name": "resnet-20261101",
+      "path": "/scratch/tyangbj/AI-Image-Detection/outputs/completion-resnet-seed20261101-2218236",
+      "seed": 20261101,
+      "checkpoint_sha256": "33f738e3d55eb81e79de89a079d02f7a1fd8c6d64da18c664c994893b7fd55bb"
+    },
+    {
+      "name": "resnet-20261102",
+      "path": "/scratch/tyangbj/AI-Image-Detection/outputs/completion-resnet-seed20261102-2218236",
+      "seed": 20261102,
+      "checkpoint_sha256": "69353653487611062a045abd681183d99a1a23e2e9b3efa021ef87ed2ae635ba"
+    },
+    {
+      "name": "v2-20261031",
+      "path": "/project/mscaiehpc42026/AI-Image-Detection/data/outputs/resnet50-robust-v2-complete",
+      "seed": 20261031,
+      "checkpoint_sha256": "3f23f1b59618dbb9ba68f59abf8a542a3f53bab857a8d1811fb7c4e9a8116cb4"
+    },
+    {
+      "name": "v2-20261101",
+      "path": "/project/mscaiehpc42026/AI-Image-Detection/data/outputs/resnet50-robust-v2-seed20261101",
+      "seed": 20261101,
+      "checkpoint_sha256": "77c0644ac559b315a48174f96a50c279f5aa9c48df5216d262b0bdb812e41048"
+    },
+    {
+      "name": "v2-20261102",
+      "path": "/project/mscaiehpc42026/AI-Image-Detection/data/outputs/resnet50-robust-v2-seed20261102",
+      "seed": 20261102,
+      "checkpoint_sha256": "fc53d4730ce7829c7f59dbed6902ce90612dcbe40501e6dacfaa86cc6f3c6b09"
+    }
+  ],
+  "note": "Supplementary evaluation of previously examined fixed tests; not a new untouched test."
+}

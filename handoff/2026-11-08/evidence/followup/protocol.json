@@ -1,0 +1,21 @@
+{
+  "dataset": "heikeadel/cocoxgen",
+  "revision": "c336ad187c2ab298ce825df65088bdacbae104f6",
+  "selection": "All 1061 COCO groups; all four synthetic variants per group",
+  "labels": "real=0; fake=1; assigned by official folder, NOT HF numeric imagefolder labels",
+  "primary_metric": "Macro AUROC and balanced accuracy over four equally-sized real-vs-generator/prompt cells; mean across three fixed seeds",
+  "cells": [
+    "fooocus-short",
+    "fooocus-long",
+    "sdxl-short",
+    "sdxl-long"
+  ],
+  "raw_pooled_accuracy": "Secondary only: 4:1 fake/real imbalance",
+  "fit_or_tune": false,
+  "control": "cap128_jpeg95 unchanged",
+  "consistency_max_probability_error": 0.002,
+  "consistency_decision_policy": "Mismatches allowed only within 0.002 of original threshold; all reported",
+  "duplicate_policy": "Keep all official rows; unite COCO groups linked by byte/RGB-identical images for bootstrap",
+  "bootstrap": "2000 paired cluster resamples, seed 20261108; fixed-model conditional intervals, not uncertainty over new training seeds",
+  "manifest_sha256": "5d45178dddf9d3b97ca8868e5a85e81b1895d8280820c62929a1846b7752f7dc"
+}

@@ -1,0 +1,14 @@
+{
+  "count": 20000,
+  "class_counts": {
+    "real": 10000,
+    "fake": 10000
+  },
+  "dimensions": {
+    "(32, 32)": 20000
+  },
+  "same_label_duplicate_files": 38,
+  "exact_byte_overlap": [],
+  "genimage_unique_files_checked": 72000,
+  "limitation": "Exact-byte check does not exclude re-encoding, near duplicates, or foundation-model pretraining exposure."
+}

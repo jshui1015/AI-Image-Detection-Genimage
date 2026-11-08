@@ -1,0 +1,5 @@
+ci=2228010
+output=/scratch/tyangbj/AI-Image-Detection/outputs/followup-20261108-DVbELg
+prepare=2228011
+gpu=2228012
+analysis=2228013

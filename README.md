@@ -1,5 +1,14 @@
 # GenImage AI 图像检测项目
 
+## 最新交接：2026-11-08（PPT / 最终论文从这里开始）
+
+- **[完整交接入口：两阶段贡献、最新结论、资产位置与剩余写作任务](HANDOFF.md)**
+- [最新九模型实验报告](handoff/2026-11-08/FINAL_REPORT.md) · [PPT与论文写作指南](handoff/2026-11-08/WRITING_GUIDE.md)
+- [八张PNG/PDF图表](handoff/2026-11-08/figures/) · [可编辑统计表](handoff/2026-11-08/tables/) · [四批核验证据](handoff/2026-11-08/evidence/)
+
+已完成三种子评估、鲁棒性、校准、CIFAKE与COCOXGEN外部测试、一致性检查和置信区间。原始阶段报告保留；写作请使用上述最新结果，避免沿用旧文档的“尚未完成”清单。原demo保留，本轮按用户要求不做实际运行验收。
+
+
 本项目使用固定 GenImage/ImageNet 清单，完成 ResNet-50 基线、冻结 CLIP 特征线性分类器、鲁棒增强实验、生成器与图像扰动评估，以及 Streamlit 演示。
 
 ## 复现指南
@@ -8,7 +17,7 @@
 
 ## 交接说明
 
-- 只看结论：发送 [`FINAL_REPORT.md`](FINAL_REPORT.md)。
+- 只看最新结论：发送 [最新实验报告](handoff/2026-11-08/FINAL_REPORT.md)；原阶段方法与开发记录仍见 [`FINAL_REPORT.md`](FINAL_REPORT.md)。
 - 审阅完整产物：浏览 [GitHub 上的 release 文件夹](https://github.com/jshui1015/AI-Image-Detection/tree/master/release/GenImage_Final_2026-11-03)，其中包含代码、固定清单、模型权重和报告。克隆仓库后运行 `git lfs pull` 下载 LFS 管理的模型权重；目录说明见 [`release/GenImage_Final_2026-11-03/README.md`](release/GenImage_Final_2026-11-03/README.md)。
 - 复现实验：还需要原始图像目录和兼容的 GPU/Conda 环境。原始图像没有包含在 release 文件夹中；清单路径相对于项目根目录。共享集群上请使用队友自己有权限访问的项目根目录。CLIP 包内只有线性分类头，CLIP ViT-B/32 编码器权重需单独获取或使用已有缓存。
 
