@@ -1,0 +1,9 @@
+{
+  "seed": 20261116,
+  "development_groups": 318,
+  "holdout_groups": 743,
+  "selection": "maximize development four-cell macro balanced accuracy; ties nearest original logit threshold",
+  "interpretation": "Post-hoc target-domain adaptation. Entire COCOXGEN was previously inspected; this holdout is not a new independent external benchmark.",
+  "macro_confusion_counts": "Macro rows average cell confusion counts; shared reals must not be summed as independent images.",
+  "source_manifest_sha256": "cc60f2d504c2cc12871ac04869bed82478d96a7c0b2c9df7ec4b48423fbbcc0e"
+}

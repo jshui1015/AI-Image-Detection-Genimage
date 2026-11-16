@@ -1,0 +1,13 @@
+{
+  "checkpoint_sha256": "3f23f1b59618dbb9ba68f59abf8a542a3f53bab857a8d1811fb7c4e9a8116cb4",
+  "threshold": 0.6389479041099548,
+  "interpolation": "Lanczos longest-side cap before cap128_jpeg95, then original bilinear resize and center crop",
+  "dimensions_columns": [
+    "original_width",
+    "original_height",
+    "reduced_width",
+    "reduced_height"
+  ],
+  "device": "cpu",
+  "threads": 6
+}
