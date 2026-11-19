@@ -1,3 +1,5 @@
+> 文档状态更新于 2026-11-19。分数诊断、36 组分辨率评估、COCOXGEN 阈值适配与生成配置分析已完成，见[最新实验补充报告](../README.md)。九模型主实验结果见 [三种子主报告](../../2026-11-08/FINAL_REPORT.md)。历史章节中的待办以当前交接说明为准。
+
 # Saved-score diagnosis
 
 Scores use original logits and each checkpoint's original validation threshold. All three seeds are retained. No parameters are fitted. The median columns average the three per-seed class medians.

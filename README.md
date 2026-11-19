@@ -1,7 +1,10 @@
+> 文档状态更新于 2026-11-19。分数诊断、36 组分辨率评估、COCOXGEN 阈值适配与生成配置分析已完成，见[最新实验补充报告](handoff/2026-11-16/README.md)。九模型主实验结果见 [三种子主报告](handoff/2026-11-08/FINAL_REPORT.md)。历史章节中的待办以当前交接说明为准。
+
 # GenImage AI 图像检测项目
 
-## 最新交接：2026-11-08（PPT / 最终论文从这里开始）
+## 当前进展（2026-11-19）
 
+- [分数、分辨率与阈值迁移诊断报告及实验数据](handoff/2026-11-16/README.md)
 - **[完整交接入口：两阶段贡献、最新结论、资产位置与剩余写作任务](HANDOFF.md)**
 - [最新九模型实验报告](handoff/2026-11-08/FINAL_REPORT.md) · [PPT与论文写作指南](handoff/2026-11-08/WRITING_GUIDE.md)
 - [八张PNG/PDF图表](handoff/2026-11-08/figures/) · [可编辑统计表](handoff/2026-11-08/tables/) · [四批核验证据](handoff/2026-11-08/evidence/)
@@ -17,7 +20,7 @@
 
 ## 交接说明
 
-- 只看最新结论：发送 [最新实验报告](handoff/2026-11-08/FINAL_REPORT.md)；原阶段方法与开发记录仍见 [`FINAL_REPORT.md`](FINAL_REPORT.md)。
+- 只看最新结论：结合 [主实验报告](handoff/2026-11-08/FINAL_REPORT.md) 与 [失败诊断补充报告](handoff/2026-11-16/README.md)；原阶段方法与开发记录仍见 [`FINAL_REPORT.md`](FINAL_REPORT.md)。
 - 审阅完整产物：浏览 [GitHub 上的 release 文件夹](https://github.com/jshui1015/AI-Image-Detection/tree/master/release/GenImage_Final_2026-11-03)，其中包含代码、固定清单、模型权重和报告。克隆仓库后运行 `git lfs pull` 下载 LFS 管理的模型权重；目录说明见 [`release/GenImage_Final_2026-11-03/README.md`](release/GenImage_Final_2026-11-03/README.md)。
 - 复现实验：还需要原始图像目录和兼容的 GPU/Conda 环境。原始图像没有包含在 release 文件夹中；清单路径相对于项目根目录。共享集群上请使用队友自己有权限访问的项目根目录。CLIP 包内只有线性分类头，CLIP ViT-B/32 编码器权重需单独获取或使用已有缓存。
 
@@ -37,7 +40,9 @@ GenImage/
 ├── evaluate.py                       # 固定清单常规评估
 ├── evaluate_validation_robustness.py # 仅验证集扰动评估
 ├── evaluate_robustness_holdout.py    # 新 holdout 最终评估
-├── scripts/                          # 构建划分、未见生成器和新 holdout 清单
+├── handoff/2026-11-08/               # 九模型主实验、外部测试和置信区间
+├── handoff/2026-11-16/               # 失败诊断报告、逐图预测与分辨率实验
+├── scripts/                          # 清单构建及离线诊断、CPU实验脚本
 ├── manifests/                        # 固定 CSV 划分、审计配置和新 holdout
 ├── inventory/                        # 候选清单与数据审计材料
 ├── outputs/                          # 权重、验证报告、测试报告和错例分析

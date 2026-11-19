@@ -1,3 +1,21 @@
+
+## 2026-11-19 当前实验状态
+
+三类模型各三个种子的主实验、七条件 holdout、校准、CIFAKE/COCOXGEN 外部评估与置信区间已完成。新增诊断结果与原始数据统一放在 `handoff/2026-11-16/`。
+
+| 工作 | 完成范围 | 主要发现 |
+|---|---|---|
+| 分数分布 | ResNet/V2/CLIP 各三种子 | CIFAKE 排序失效，COCOXGEN 假图得分偏低 |
+| 分辨率控制 | 一个 ResNet 与三个 V2，三测试集×三条件，共36组 | 降低分辨率导致明显退化，V2 low64 存在较大种子波动 |
+| 阈值迁移 | 按COCO原图组划分318组开发、743组保留 | 适配能减少漏检，同时真图误报明显上升 |
+| 生成配置 | 四配置、三个模型家族各三种子 | 长提示词配置平均AUROC较低，属于描述性比较 |
+
+已见集 V2 的 original/low64/low32 AUROC 分别为 0.9936/0.7852/0.4277。COCOXGEN 保留集适配后 ResNet/V2/CLIP 平衡准确率分别为66.11%/63.71%/74.76%，真图误报率分别为34.50%/31.99%/21.09%。分辨率处理先保持比例限制最长边，再执行 cap128_jpeg95，低分辨率会改变后续JPEG处理产生的图像，当前结论限定为整个指定处理流程的影响。
+
+本轮属于外部结果已查看后的诊断。新的开发/保留划分只用于事后适配分析。尚未隔离分辨率、生成内容、来源与处理历史各自的因果贡献，配置差异尚无新增显著性检验。演示沿用此前未验收状态，新增九模型权重长期备份仍待团队完成。
+
+> 文档状态更新于 2026-11-19。分数诊断、36 组分辨率评估、COCOXGEN 阈值适配与生成配置分析已完成，见[最新实验补充报告](handoff/2026-11-16/README.md)。九模型主实验结果见 [三种子主报告](handoff/2026-11-08/FINAL_REPORT.md)。历史章节中的待办以当前交接说明为准。
+
 # ResNet-50 基线
 
 `train.py` 从固定清单读取数据，按224×224处理，使用 ImageNet 预训练 ResNet-50 做二分类。完整运行默认训练10轮，依据验证集 AUROC 保存最佳模型，随后在验证集选F1阈值。该阈值只用于后续锁定评估规则，不能在 `test_seen.csv` 上调整。
@@ -8,7 +26,7 @@
 module load anaconda3/2023.09-0-biybti3
 source "$(conda info --base)/etc/profile.d/conda.sh"
 conda activate myenv
-cd /scratch/jshui/GenImage
+cd "/scratch/$USER/GenImage"
 python train.py
 ```
 
@@ -20,7 +38,7 @@ OMP_NUM_THREADS=4 MKL_NUM_THREADS=4 python train.py --smoke-test --no-pretrained
 
 完整训练检查点和验证报告写入 `outputs/resnet50/`。正式训练默认要求可见GPU，避免意外在CPU上运行长作业；GPU不可见时会立即报错。冒烟模式可显式用CPU。`--weights /path/to/resnet50.pth` 可以指定本地 ImageNet 预训练权重。训练参数可通过 `--epochs`、`--batch-size`、`--workers`、`--lr` 设置。
 
-CPU冒烟试跑分别在 PyTorch 2.14.1 和 2.11.0+cu128 上通过，均使用随机初始化权重；这不是正式基线结果。产物分别在 `outputs/resnet50-smoke/` 与 `outputs/resnet50-smoke-cu128/`。gpu21上的 CUDA 可用性仍需在交互作业中确认。
+CPU冒烟试跑分别在 PyTorch 2.14.1 和 2.11.0+cu128 上通过，均使用随机初始化权重；这不是正式基线结果。产物分别在 `outputs/resnet50-smoke/` 与 `outputs/resnet50-smoke-cu128/`。历史正式训练和评估已在NVIDIA L20完成，后续新作业仍应检查自身分配的GPU。
 
 ## GPU节点预检
 
@@ -73,7 +91,7 @@ python /scratch/jshui/GenImage/evaluate.py
 在GPU节点运行以下三个固定扰动。它们复用同一个最佳检查点和验证集阈值，不改写原图或数据清单：
 
 ```bash
-cd /scratch/jshui/GenImage
+cd "/scratch/$USER/GenImage"
 for control in jpeg95 cap128 cap128_jpeg95; do
   python evaluate.py --control "$control" \
     --output-dir "outputs/resnet50-rerun/test_seen_bias_control/$control" || exit
@@ -110,7 +128,7 @@ for control in jpeg95 cap128 cap128_jpeg95; do
 使用固定种子20261102，从每个类别的6张假图中按SHA-256稳定排序选2张，与相应reserved清单中每类2张真图配对。两个独立测试集各4,000张（2,000真+2,000假），每类每标签各2张；与train、val、test_seen不重叠，GLIDE/VQDM两份测试集也互不重叠。清单分别为 `manifests/test_glide_unseen.csv` 和 `manifests/test_vqdm_unseen.csv`，构建配置为 `manifests/unseen_test_config.json`。重建命令：
 
 ```bash
-cd /scratch/jshui/GenImage
+cd "/scratch/$USER/GenImage"
 python scripts/build_unseen_test_manifests.py
 ```
 
@@ -149,7 +167,7 @@ python evaluate.py \
 先在GPU节点运行冒烟检查（会下载模型权重，如缓存中没有）：
 
 ```bash
-cd /scratch/jshui/GenImage
+cd "/scratch/$USER/GenImage"
 python clip_detector.py --smoke-test \
   --output-dir outputs/clip-vit-b32-cap128-jpeg95-smoke
 ```
@@ -177,7 +195,7 @@ python clip_detector.py --stage evaluate --split test_vqdm_unseen \
 
 ### CLIP 验证阶段记录（2026-11-02）
 
-训练和验证CLIP特征已缓存，后续重训分类头可复用。冻结编码器使用`openai/clip-vit-base-patch32`，特征维度512，预处理`cap128_jpeg95`。线性头训练到预设500轮上限，最佳点为第500轮（不是patience早停）。验证AUROC 0.98097、AP 0.97702；验证F1阈值0.509909，对应准确率0.93588、精确率0.92205、召回率0.95225、F1 0.93691。此checkpoint和阈值已锁定，下一步对三个测试清单各评估一次。
+训练和验证CLIP特征已缓存，后续重训分类头可复用。冻结编码器使用`openai/clip-vit-base-patch32`，特征维度512，预处理`cap128_jpeg95`。线性头训练到预设500轮上限，最佳点为第500轮（不是patience早停）。验证AUROC 0.98097、AP 0.97702；验证F1阈值0.509909，对应准确率0.93588、精确率0.92205、召回率0.95225、F1 0.93691。此checkpoint和阈值已锁定，三个测试清单的评估已完成，后续三种子结果见11月8日主报告。
 
 ### CLIP 最终测试（2026-11-02）
 
@@ -203,7 +221,7 @@ ResNet-50的同设置AUROC为seen 0.99507、GLIDE 0.98921、VQDM 0.97233。CLIP�
 启动Streamlit应用（GPU节点需有可见GPU，模型使用受控ResNet checkpoint）：
 
 ```bash
-cd /scratch/jshui/GenImage
+cd "/scratch/$USER/GenImage"
 streamlit run demo.py --server.address 0.0.0.0 --server.port 8501
 ```
 
