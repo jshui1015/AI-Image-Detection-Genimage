@@ -8,21 +8,22 @@
 
 ## 已完成的实验
 
-| 工作 | 已完成范围 | 结果与证据 |
-|---|---|---|
-| 数据准备 | GenImage/ImageNet 盘点、类别映射核实、重复与来源组审计、固定训练/验证/测试清单，以及额外 6,000 张图片的 holdout | [固定清单](manifests/)与[数据审计](inventory/README.md) |
-| 基线模型 | ImageNet 预训练 ResNet-50，以及冻结 CLIP ViT-B/32 加线性分类头 | [训练记录](BASELINE.md) |
-| 鲁棒训练 | 初版增强实验，以及混合干净图与退化图训练的 V2 | [方法与开发报告](FINAL_REPORT.md) |
-| 三种子评估 | ResNet、V2、CLIP 各使用 20261031、20261101、20261102 三个种子 | [主实验报告](handoff/2026-11-08/FINAL_REPORT.md) |
-| 跨生成器检测 | 已见 BigGAN/SD1.4/ADM，以及分别评估的未见 GLIDE/VQDM | [逐种子结果](handoff/2026-11-08/tables/per_seed_results.csv) |
-| 图像扰动鲁棒性 | 固定 6,000 张 holdout 图片的七种条件，包含 JPEG、缩放和模糊 | [Holdout 结果](handoff/2026-11-08/tables/holdout_results.csv) |
-| 概率校准 | 九个模型在验证集拟合温度缩放，并评估 Brier、NLL、ECE | [校准结果](handoff/2026-11-08/tables/calibration_results.csv) |
-| 外部数据评估 | CIFAKE 官方测试集全部 20,000 张，以及 COCOXGEN 全部 5,305 张 | [外部结果与局限](handoff/2026-11-08/FINAL_REPORT.md) |
-| 统计分析 | 种子样本标准差、配对成组 bootstrap 区间、推理一致性检查 | [主实验证据包](handoff/2026-11-08/evidence/) |
-| 分数诊断 | 按真假标签统计分位数、ECDF 图、排序指标和固定阈值混淆计数 | [分数分析](handoff/2026-11-16/score_diagnosis/REPORT.md) |
-| 分辨率控制 | 一个 ResNet 与三个 V2，三种测试集 × original/64/32 条件，共 36 组评估 | [分辨率实验输出](handoff/2026-11-16/resolution_control/) |
-| 阈值适配 | 按 COCO 原图组划分开发/保留集，每个模型在开发集选择一个阈值 | [阈值适配结果](handoff/2026-11-16/threshold_transfer/summary.csv) |
-| 生成配置分析 | 在保留集比较 Fooocus/SDXL × 长/短提示词四种配置 | [最新诊断报告](handoff/2026-11-16/README.md) |
+| 工作 | 实验目的 | 已完成范围 | 结果与证据 |
+|---|---|---|---|
+| 数据准备 | 核实标签、类别与来源，减少跨集合重复和数据泄漏，保证模型比较公平 | GenImage/ImageNet 盘点、类别映射核实、重复与来源组审计、固定训练/验证/测试清单，以及额外 6,000 张图片的 holdout | [固定清单](https://github.com/jshui1015/AI-Image-Detection-Genimage/tree/master/manifests) · [数据审计](https://github.com/jshui1015/AI-Image-Detection-Genimage/blob/master/inventory/README.md) |
+| 基线模型 | 建立参考性能，比较 CNN 学习到的检测特征与预训练 CLIP 特征 | ImageNet 预训练 ResNet-50，以及冻结 CLIP ViT-B/32 加线性分类头 | [训练记录](https://github.com/jshui1015/AI-Image-Detection-Genimage/blob/master/BASELINE.md) |
+| 鲁棒训练 | 检查图像增强能否提高抗退化能力，并衡量干净图片性能的取舍 | 初版增强实验，以及混合干净图与退化图训练的 V2 | [方法与开发报告](https://github.com/jshui1015/AI-Image-Detection-Genimage/blob/master/FINAL_REPORT.md) |
+| 三种子评估 | 衡量训练随机性，检查结果和改进是否稳定 | ResNet、V2、CLIP 各使用 20261031、20261101、20261102 三个种子 | [主实验报告](https://github.com/jshui1015/AI-Image-Detection-Genimage/blob/master/handoff/2026-11-08/FINAL_REPORT.md) |
+| 跨生成器检测 | 检查独立图片上的基本检测能力，以及对训练中未见生成器的迁移能力 | 已见 BigGAN/SD1.4/ADM，以及分别评估的未见 GLIDE/VQDM | [逐种子结果](https://github.com/jshui1015/AI-Image-Detection-Genimage/blob/master/handoff/2026-11-08/tables/per_seed_results.csv) |
+| 图像扰动鲁棒性 | 测量压缩、缩放和模糊后的性能下降，检验鲁棒训练的实际收益 | 固定 6,000 张 holdout 图片的七种条件，包含干净图片、JPEG、缩放和模糊 | [Holdout 结果](https://github.com/jshui1015/AI-Image-Detection-Genimage/blob/master/handoff/2026-11-08/tables/holdout_results.csv) |
+| 概率校准 | 检查得分与实际真假比例的对应关系，以及校准效果的跨域迁移 | 九个模型在验证集拟合温度缩放，并评估 Brier、NLL、ECE | [校准结果](https://github.com/jshui1015/AI-Image-Detection-Genimage/blob/master/handoff/2026-11-08/tables/calibration_results.csv) |
+| 外部数据评估 | 检查图片来源、内容和生成流程变化后的泛化表现 | CIFAKE 官方测试集全部 20,000 张，以及 COCOXGEN 全部 5,305 张 | [外部结果与局限](https://github.com/jshui1015/AI-Image-Detection-Genimage/blob/master/handoff/2026-11-08/FINAL_REPORT.md) |
+| 统计分析 | 衡量训练波动与测试抽样不确定性，核对评估实现的一致性 | 种子样本标准差、配对成组 bootstrap 区间、推理一致性检查 | [主实验证据包](https://github.com/jshui1015/AI-Image-Detection-Genimage/tree/master/handoff/2026-11-08/evidence) |
+| 分数诊断 | 区分排序能力下降、分数分布偏移和固定阈值失效等现象 | 按真假标签统计分位数、ECDF 图、排序指标和固定阈值混淆计数 | [分数分析](https://github.com/jshui1015/AI-Image-Detection-Genimage/blob/master/handoff/2026-11-16/score_diagnosis/REPORT.md) |
+| 分辨率控制 | 固定图片、模型和阈值，检查指定低分辨率处理造成的退化，为 CIFAKE 失败寻找证据 | 一个 ResNet 与三个 V2，三种测试集 × original/64/32，共 36 组评估；64/32 为保持长宽比的最长边上限 | [分辨率实验输出](https://github.com/jshui1015/AI-Image-Detection-Genimage/tree/master/handoff/2026-11-16/resolution_control) |
+| 阈值适配 | 量化目标域阈值调整能缓解多少漏检，以及带来的真图误报代价 | 按 COCO 原图组划分 318 组开发集、743 组保留集，每个模型在开发集选择一个共用阈值 | [阈值适配结果](https://github.com/jshui1015/AI-Image-Detection-Genimage/blob/master/handoff/2026-11-16/threshold_transfer/summary.csv) |
+| 生成配置分析 | 检查检测难度是否随生成流程和提示词配置变化 | 在保留集比较 Fooocus/SDXL × 长/短提示词四种配置 | [生成配置分析](https://github.com/jshui1015/AI-Image-Detection-Genimage/blob/master/handoff/2026-11-16/threshold_transfer/CELL_REPORT.md) |
+
 
 ## 主要实验结果
 
